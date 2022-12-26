@@ -1,11 +1,6 @@
-import Slider from "react-slick";
 import { useLocation } from "react-router-dom";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 import React, { useEffect, useRef, useState } from "react";
-
-// import porto from "./../data/porto.json";
 
 const Detail = () => {
     let { detail, primaryImg } = useLocation().state;
@@ -18,21 +13,67 @@ const Detail = () => {
         dataImg.push(dir);
     }
 
-    let filterImg = [];
-    for (let i = 0; i <= 3; i++) {
-        filterImg.push(dataImg[i]);
-    }
+    const lengthImgIsExist = dataImg.length <= 4 ? true : false;
+    const [hiddenPrev, setHiddenPrev] = useState(true);
+    const [hiddenNext, setHiddenNext] = useState(lengthImgIsExist);
 
-    const prev = (data) => {};
-    const next = (data) => {
-        // const endIndex = filterImg.findIndex((element) => element === data) + 1;
-        // const startIndex = endIndex - 3;
-        // for (let i = startIndex; i <= endIndex; i++) {
-        //     let filterImg = [];
-        //     for (let i = 0; i <= 3; i++) {
-        //         filterImg.push(dataImg[i]);
-        //     }
-        // }
+    const valState = {
+        start: 0,
+        end: !lengthImgIsExist ? 3 : dataImg.length,
+    };
+
+    const [stateIndex, setStateIndex] = useState(valState);
+
+    const filterImg = dataImg.filter((e) => {
+        return (
+            stateIndex.start <= dataImg.indexOf(e) &&
+            stateIndex.end >= dataImg.indexOf(e)
+        );
+    });
+
+    const btnPrev = useRef(false);
+
+    const prev = () => {
+        if (stateIndex.start + 4 <= 4) {
+            setHiddenPrev(true);
+        } else {
+            setStateIndex({
+                start: stateIndex.start - 1,
+                end: stateIndex.end - 1,
+            });
+            setHiddenNext(false);
+        }
+    };
+
+    const btnNext = useRef(false);
+
+    const next = () => {
+        if (stateIndex.start === dataImg.length - 4) {
+            setHiddenNext(true);
+        } else {
+            setStateIndex({
+                start: stateIndex.start + 1,
+                end: stateIndex.end + 1,
+            });
+            setHiddenPrev(false);
+        }
+    };
+
+    useEffect(() => {
+        if (hiddenNext) {
+            btnNext.current.classList.add("hidden");
+        } else {
+            btnNext.current.classList.remove("hidden");
+        }
+        if (hiddenPrev) {
+            btnPrev.current.classList.add("hidden");
+        } else {
+            btnPrev.current.classList.remove("hidden");
+        }
+    }, [hiddenNext, hiddenPrev]);
+
+    const handleHover = (src) => {
+        setShowImg(src);
     };
 
     return (
@@ -53,19 +94,27 @@ const Detail = () => {
             </div>
 
             <div className="mt-5   py-10">
-                <div className="w-full mb-5">
-                    <img src={showImg} alt="" />
-                </div>
                 <div className="flex">
-                    <button onClick={() => prev(filterImg[0])}>prev</button>
+                    <button onClick={prev} ref={btnPrev}>
+                        prev
+                    </button>
                     {filterImg.map((d, i) => {
                         return (
-                            <div key={i} className="w-20 mr-2">
+                            <div
+                                key={i}
+                                onMouseOver={() => handleHover(d)}
+                                className="w-20 mr-2 flex items-center cursor-pointer"
+                            >
                                 <img src={d} alt="" />
                             </div>
                         );
                     })}
-                    <button onClick={() => next(filterImg[3])}>next</button>
+                    <button onClick={next} ref={btnNext}>
+                        next
+                    </button>
+                </div>
+                <div className="w-full mt-5">
+                    <img src={showImg} alt="" />
                 </div>
             </div>
         </div>
@@ -73,67 +122,3 @@ const Detail = () => {
 };
 
 export default Detail;
-
-// const SliderEl = ({ dataImg }) => {
-//     const slider1 = useRef(null);
-//     const slider2 = useRef(null);
-//     const [nav, setNav] = useState({
-//         nav1: null,
-//         nav2: null,
-//     });
-//     useEffect(() => {
-//         setNav({
-//             nav1: slider1.current,
-//             nav2: slider2.current,
-//         });
-//     }, []);
-//     const settings1 = {
-//         asNavFor: nav.nav2,
-//         ref: slider1,
-//         fade: true,
-//     };
-
-//     const settings2 = {
-//         asNavFor: nav.nav1,
-//         ref: slider2,
-//         slidesToShow: 3,
-//         swipeToSlide: true,
-//         focusOnSelect: true,
-//         infinite: true,
-//         slidesToScroll: 1,
-//         dots: true,
-//     };
-//     return (
-//         <>
-//             <h2> Single Item</h2>
-//             <div className="mb-5">
-//                 <Slider {...settings1}>
-//                     {dataImg.map((data, i) => {
-//                         return (
-//                             <img
-//                                 key={i}
-//                                 className="mr-4 w-44 border border-white cursor-pointer"
-//                                 src={data}
-//                                 alt=""
-//                             />
-//                         );
-//                     })}
-//                 </Slider>
-//             </div>
-
-//             <Slider {...settings2}>
-//                 {dataImg.map((data, i) => {
-//                     return (
-//                         <div key={i}>
-//                             <img
-//                                 className=" w-28  border border-white cursor-pointer"
-//                                 src={data}
-//                                 alt=""
-//                             />
-//                         </div>
-//                     );
-//                 })}
-//             </Slider>
-//         </>
-//     );
-// };

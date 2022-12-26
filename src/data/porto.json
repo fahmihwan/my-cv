@@ -27,6 +27,8 @@
             "slug": "myorder-seacoff",
             "primaryImg": "./porto-img/myorder-seacoff/4.png",
             "detail": {
+                "dir": "/porto-img/myorder-seacoff/",
+                "totalImg": "16",
                 "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
                 "fitur": [
                     "Scan QRcode untuk Authentikasi customer",
@@ -52,6 +54,8 @@
             "slug": "sim-aset",
             "primaryImg": "./porto-img/sim-aset/1.png",
             "detail": {
+                "dir": "/porto-img/sim-aset/",
+                "totalImg": "6",
                 "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
                 "fitur": [
                     "Scan QRcode untuk Authentikasi customer",
@@ -77,6 +81,8 @@
             "slug": "react-shopping-cart",
             "primaryImg": "./porto-img/react-shopping-cart/1.png",
             "detail": {
+                "dir": "/porto-img/react-shopping-cart/",
+                "totalImg": "1",
                 "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
                 "fitur": [
                     "Scan QRcode untuk Authentikasi customer",
@@ -102,6 +108,8 @@
             "slug": "si-perpustakaan",
             "primaryImg": "./porto-img/si-perpustakaan/2.png",
             "detail": {
+                "dir": "/porto-img/si-perpustakaan/",
+                "totalImg": "5",
                 "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
                 "fitur": [
                     "Scan QRcode untuk Authentikasi customer",
@@ -127,6 +135,8 @@
             "slug": "inventory-thrift",
             "primaryImg": "./porto-img/inventory-thrift/3.png",
             "detail": {
+                "dir": "/porto-img/inventory-thrift/",
+                "totalImg": "5",
                 "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
                 "fitur": [
                     "Scan QRcode untuk Authentikasi customer",
