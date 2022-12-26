@@ -1,0 +1,151 @@
+{
+    "data": [
+        {
+            "title": "Outlaws Studio Online Store",
+            "slug": "outlaws-studio-online-store",
+            "primaryImg": "./porto-img/outlaws-studio/3.png",
+            "detail": {
+                "dir": "/porto-img/outlaws-studio/",
+                "totalImg": "12",
+                "description": "Outlaws store merupakan toko online yang terinspirasi dari UI/UX www.converse.id. Semua tahapan pengerjaan dibuat dengan slicing manual.",
+                "fitur": [
+                    "Access: owner, karyawan, pembeli",
+                    "Penambahan stok item berdasarkan kategori & ukuran",
+                    "Shopping cart",
+                    "Wishlist",
+                    "Export csv & pdf",
+                    "Pengiriman API Rajaongkir",
+                    "Pembayaran midtrans (core API)",
+                    "forgot password, verify email"
+                ],
+                "technology": ["PHP", "LARAVEL", "JQUERY", "TAILWIND", "MYSQL"],
+                "integration": ["Rajaongkir", "Midtrans", "email"]
+            }
+        },
+        {
+            "title": "Myorder Seacoff",
+            "slug": "myorder-seacoff",
+            "primaryImg": "./porto-img/myorder-seacoff/4.png",
+            "detail": {
+                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
+                "fitur": [
+                    "Scan QRcode untuk Authentikasi customer",
+                    "Real time notification ajax",
+                    "Lacak pesanan pelanggan (pending, proccess, finish)",
+                    "Konfirmasi pesanan pelanggan",
+                    "Shopping cart",
+                    "Pembayaran Midtrans (Snap Payment)",
+                    "forgot password, verify email"
+                ],
+                "technology": [
+                    "PHP",
+                    "LARAVEL",
+                    "Vanilla Javascript",
+                    "Bootstrap",
+                    "MYSQL"
+                ],
+                "integration": ["QRcode", "Midtrans", "gmail"]
+            }
+        },
+        {
+            "title": "Sistem Informasi Managemen Aset",
+            "slug": "sim-aset",
+            "primaryImg": "./porto-img/sim-aset/1.png",
+            "detail": {
+                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
+                "fitur": [
+                    "Scan QRcode untuk Authentikasi customer",
+                    "Real time notification ajax",
+                    "Lacak pesanan pelanggan (pending, proccess, finish)",
+                    "Konfirmasi pesanan pelanggan",
+                    "Shopping cart",
+                    "Pembayaran Midtrans (Snap Payment)",
+                    "forgot password, verify email"
+                ],
+                "technology": [
+                    "PHP",
+                    "LARAVEL",
+                    "Vanilla Javascript",
+                    "Bootstrap",
+                    "MYSQL"
+                ],
+                "integration": ["QRcode", "Midtrans", "gmail"]
+            }
+        },
+        {
+            "title": "Simple Shopping Cart React",
+            "slug": "react-shopping-cart",
+            "primaryImg": "./porto-img/react-shopping-cart/1.png",
+            "detail": {
+                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
+                "fitur": [
+                    "Scan QRcode untuk Authentikasi customer",
+                    "Real time notification ajax",
+                    "Lacak pesanan pelanggan (pending, proccess, finish)",
+                    "Konfirmasi pesanan pelanggan",
+                    "Shopping cart",
+                    "Pembayaran Midtrans (Snap Payment)",
+                    "forgot password, verify email"
+                ],
+                "technology": [
+                    "PHP",
+                    "LARAVEL",
+                    "Vanilla Javascript",
+                    "Bootstrap",
+                    "MYSQL"
+                ],
+                "integration": ["QRcode", "Midtrans", "gmail"]
+            }
+        },
+        {
+            "title": "Sistem Informasi Perpustakaan",
+            "slug": "si-perpustakaan",
+            "primaryImg": "./porto-img/si-perpustakaan/2.png",
+            "detail": {
+                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
+                "fitur": [
+                    "Scan QRcode untuk Authentikasi customer",
+                    "Real time notification ajax",
+                    "Lacak pesanan pelanggan (pending, proccess, finish)",
+                    "Konfirmasi pesanan pelanggan",
+                    "Shopping cart",
+                    "Pembayaran Midtrans (Snap Payment)",
+                    "forgot password, verify email"
+                ],
+                "technology": [
+                    "PHP",
+                    "LARAVEL",
+                    "Vanilla Javascript",
+                    "Bootstrap",
+                    "MYSQL"
+                ],
+                "integration": ["QRcode", "Midtrans", "gmail"]
+            }
+        },
+        {
+            "title": "Bukatutup Second Inventory Thrift",
+            "slug": "inventory-thrift",
+            "primaryImg": "./porto-img/inventory-thrift/3.png",
+            "detail": {
+                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
+                "fitur": [
+                    "Scan QRcode untuk Authentikasi customer",
+                    "Real time notification ajax",
+                    "Lacak pesanan pelanggan (pending, proccess, finish)",
+                    "Konfirmasi pesanan pelanggan",
+                    "Shopping cart",
+                    "Pembayaran Midtrans (Snap Payment)",
+                    "forgot password, verify email"
+                ],
+                "technology": [
+                    "PHP",
+                    "LARAVEL",
+                    "Vanilla Javascript",
+                    "Bootstrap",
+                    "MYSQL"
+                ],
+                "integration": ["QRcode", "Midtrans", "gmail"]
+            }
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "title": "Laravel",
+      "value": "80"
+    },
+    {
+      "title": "ReactJs",
+      "value": "65"
+    },
+    {
+      "title": "Javascript",
+      "value": "70"
+    },
+    {
+      "title": "PHP",
+      "value": "70"
+    },
+    {
+      "title": "MYSQL",
+      "value": "75"
+    }
+  ]
+}

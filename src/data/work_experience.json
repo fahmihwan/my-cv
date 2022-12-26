@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "title": "Co-Trainer",
+      "company": "PT Sinergi Digital Solusindo",
+      "category": "Freelance",
+      "duration":"Jun 2022 (1 week)",
+      "description": [" When I was a bachelor's student, I am taking a job as Freelance Trainer for one week. My daily job was train employees to use Warehouse Management System Applications at PT.Pertamina Lubricants based on DSP Batakan - Balikpapan.",
+       "Working with their company to handle inbound and outbound"]
+    },
+    {
+      "title": "React JS Front-End Engineer",
+      "company": "Alterra Academy ",
+      "category": "Internship",
+      "duration":"Feb 2022 - May 2022",
+      "description": [
+        "Learn Basic UI/UX with Figma, React Js and Redux",
+        "Making some mini projec",
+        "Finished the daily task."
+    ]},
+    {
+      "title": "Frontend Web Developer",
+      "company": "PT.Gama Informatika",
+      "category": "Internship",
+      "duration":"Sep 2021 - Jan 2022 ",
+      "description": [
+        "Build Tambak Udang frontend using Angular framework.",
+        "Slicing From UI/UX design wireframe.",
+        "Consume Rest Api From Backend",
+        "Team up with the Analist System, UI/UX designer and Backend."
+    ]},
+    {
+      "title": "Assistant Lecturer",
+      "company": "Universitas Teknologi Yogyakarta",
+      "category": "Contract",
+      "duration":"Aug 2021 - Jan 2022",
+      "description": [
+        "Teaching web programming 1 practice course for one semester (3sks).",
+        "Preparing learning materials about HTML, CSS, JS, PHP, jQuery, MySQL.",
+        "Create weekly task.",
+        "Correcting weekly task from students.",
+        "Creating the task assessment reports from students."
+    ]},
+    {
+      "title": "Web Programmer",
+      "company": "SEVEN INC JOGJA",
+      "category": "Internship",
+      "duration":"Sep 2021 - Dec 2021",
+      "description": [
+        "Working with Ci4.",
+        "Fixing bugs Djuragan.com"
+    ]}
+  ]
+}
