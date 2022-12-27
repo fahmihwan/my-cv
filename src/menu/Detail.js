@@ -1,6 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
-import "./ScrollbarDetail.css";
 
 import { MdArrowBackIos } from "react-icons/md";
 const Detail = () => {

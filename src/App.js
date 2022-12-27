@@ -7,7 +7,7 @@ import TopNav from "./components/TopNav";
 import Portfolio from "./menu/Portfolio";
 import BottomNav from "./components/BottomNav";
 import Detail from "./menu/Detail";
-
+import Snowfall from "react-snowfall";
 function App() {
     const [theme, setTheme] = useState("dark");
 
@@ -25,6 +25,7 @@ function App() {
 
     return (
         <div className="  bg-white  dark:bg-fancy min-h-screen text-black dark:text-gray-400 ">
+            <Snowfall snowflakeCount={8} />
             <TopNav handleTheme={handleTheme} />
             <Routes>
                 <Route path="/" element={<Home />} />

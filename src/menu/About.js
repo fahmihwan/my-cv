@@ -42,38 +42,36 @@ export default About;
 const Description = () => {
     return (
         <div className="w-full px-10 mt-5 pb-10">
-            <p className="text-4xl mb-3">Yo, hello there!</p>
+            <p className="text-4xl md:hidden">Yo, hello there!</p>
             <div className="flex flex-wrap-reverse  mb-5">
                 <div className="w-full md:w-8/12  text-textFancy z-10">
-                    <div className="md:pr-20 mt-5 md:mt-0">
-                        <p className="text-justify">
-                            I'm Yehezkiel Gunawan, a front-end engineer. You can
-                            call me Yehez. Recently, I'm learning React and its
-                            libraries while working in its ecosystem. To sharpen
-                            my understanding of something, I usually push myself
-                            to craft some projects and publish them here.
-                            Sometimes, I write some blogs to share my
-                            experience, testimonies, or tips & tricks as a
-                            frontend developer. Besides of programming things, I
-                            like to explore some new tech stuff, playing games
-                            sometimes, and watching animes. Oh by the way, if
-                            you don't mind, you can support me through Ko-fi or
-                            Saweria to keep this site alive and maintained.
+                    <section className="md:pr-20 mt-5 md:mt-0">
+                        <p className="text-4xl mb-5 hidden md:block ">
+                            Yo, hello there!
                         </p>
-                    </div>
-                    <div className="pt-3 flex">
+                        <p className="text-justify">
+                            I'm Fahmi Ichwanurrohman, you can call me Fahmi.
+                            graduated from Information System at Universitas
+                            Teknologi Yogyakarta. Focusing an technologies for
+                            web development with PHP and Javascript, such
+                            Laravel and React. I love to learn all of new
+                            things. Recently, I'm learning React and Laravel
+                            development.
+                        </p>
+                    </section>
+                    <section className="pt-3 mt-5 flex">
                         <FaGithub className="text-4xl mr-3 stroke-2 " />
                         <FaLinkedin className="text-4xl mr-3" />
                         <AiOutlineMail className="text-4xl mr-3" />
                         <FaWhatsapp className="text-4xl" />
-                    </div>
+                    </section>
                 </div>
-                <div className="w-full md:w-3/12 flex justify-center z-10">
+                <div className="w-full md:w-3/12  flex justify-center z-10">
                     <ProfileImg />
                 </div>
             </div>
-            <SvgDescription />
-            <hr className="border-purple-800" />
+            {/* <SvgDescription /> */}
+            {/* <hr className="border-purple-800" /> */}
         </div>
     );
 };
@@ -219,7 +217,6 @@ const FilterIcon = ({ icon }) => {
 
 const SvgDescription = ({ responsive }) => {
     return (
-        // <div className="relative hidden md:block">
         <div className={`relative block`}>
             <svg
                 className="absolute left-0 bottom-0  right-0 stroke-2 stroke-purple-900 "
