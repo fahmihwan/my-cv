@@ -19,7 +19,8 @@
                     "forgot password, verify email"
                 ],
                 "technology": ["PHP", "LARAVEL", "JQUERY", "TAILWIND", "MYSQL"],
-                "integration": ["Rajaongkir", "Midtrans", "email"]
+                "integration": ["Rajaongkir", "Midtrans", "email"],
+                "link": "https://github.com/fahmihwan/outlaws-studio-online-store.git"
             }
         },
         {
@@ -43,10 +44,11 @@
                     "PHP",
                     "LARAVEL",
                     "Vanilla Javascript",
-                    "Bootstrap",
+                    "BOOTSTRAP",
                     "MYSQL"
                 ],
-                "integration": ["QRcode", "Midtrans", "gmail"]
+                "integration": ["QRcode", "Midtrans", "Gmail"],
+                "link": "https://github.com/fahmihwan/My-order-seacoff.git"
             }
         },
         {
@@ -67,13 +69,16 @@
                     "forgot password, verify email"
                 ],
                 "technology": [
-                    "PHP",
+                    "REACT JS",
                     "LARAVEL",
-                    "Vanilla Javascript",
-                    "Bootstrap",
+                    "PHP",
+                    "INERTIA",
+                    "BREEZE",
+                    "TAILWIND",
                     "MYSQL"
                 ],
-                "integration": ["QRcode", "Midtrans", "gmail"]
+                "integration": [],
+                "link": "https://github.com/fahmihwan/sim-aset-react-laravel.git"
             }
         },
         {
@@ -83,24 +88,11 @@
             "detail": {
                 "dir": "/porto-img/react-shopping-cart/",
                 "totalImg": "1",
-                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
-                "fitur": [
-                    "Scan QRcode untuk Authentikasi customer",
-                    "Real time notification ajax",
-                    "Lacak pesanan pelanggan (pending, proccess, finish)",
-                    "Konfirmasi pesanan pelanggan",
-                    "Shopping cart",
-                    "Pembayaran Midtrans (Snap Payment)",
-                    "forgot password, verify email"
-                ],
-                "technology": [
-                    "PHP",
-                    "LARAVEL",
-                    "Vanilla Javascript",
-                    "Bootstrap",
-                    "MYSQL"
-                ],
-                "integration": ["QRcode", "Midtrans", "gmail"]
+                "description": "Merupakan web UI hasil slicing yang terinpirasi dari pizzahut. Aplikasi hanya melakukan kalkulasi harga dan jumlah",
+                "fitur": [],
+                "technology": ["REACT JS", "BOOTSTRAP"],
+                "integration": [],
+                "link": "https://github.com/fahmihwan/simple-shoppingCart-react.git"
             }
         },
         {
@@ -110,24 +102,39 @@
             "detail": {
                 "dir": "/porto-img/si-perpustakaan/",
                 "totalImg": "5",
-                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
+                "description": "Merupakan aplikasi untuk mencatat peminjaman buku di perpustakaan.",
                 "fitur": [
-                    "Scan QRcode untuk Authentikasi customer",
-                    "Real time notification ajax",
-                    "Lacak pesanan pelanggan (pending, proccess, finish)",
-                    "Konfirmasi pesanan pelanggan",
-                    "Shopping cart",
-                    "Pembayaran Midtrans (Snap Payment)",
-                    "forgot password, verify email"
+                    "Akses: Operator, kepala perpustakaan",
+                    "kelola buku ",
+                    "Kelola peminjaman",
+                    "Kelola pengembalian",
+                    "Denda ",
+                    "kelola pengunjung",
+                    "Laporan"
                 ],
                 "technology": [
                     "PHP",
                     "LARAVEL",
-                    "Vanilla Javascript",
-                    "Bootstrap",
+                    "BOOTSTRAP",
+                    "JQUERY",
                     "MYSQL"
                 ],
-                "integration": ["QRcode", "Midtrans", "gmail"]
+                "integration": [],
+                "link": "https://github.com/fahmihwan/sistem-informasi-perpustakaan.git"
+            }
+        },
+        {
+            "title": "Company Profile Bumi Balakosa",
+            "slug": "company-profile-bumibalakosa",
+            "primaryImg": "./porto-img/company-profile-bumibalakosa/1.png",
+            "detail": {
+                "dir": "/porto-img/company-profile-bumibalakosa/",
+                "totalImg": "3",
+                "description": "Merupakan aplikasi Inventory toko thrifting. Sebagai pencatatan barang masuk dan badang keluar",
+                "fitur": ["Kirim pesan email", "Ganti Bahasa"],
+                "technology": ["REACT JS", "BOOTSTRAP"],
+                "integration": ["Email Js"],
+                "link": "https://www.bumibalakosa.com"
             }
         },
         {
@@ -137,24 +144,24 @@
             "detail": {
                 "dir": "/porto-img/inventory-thrift/",
                 "totalImg": "5",
-                "description": "Merupakan aplikasi pemesanan menu pada kedai Kopi Seacoff. UI UX pada aplikasi ini terinspirasi dari KFCKU(mobile apps). Aplikasi ini memberi pilihan: dapat memesan menu melalui kasir & dapat memesan menu melalui aplikasi myorderseacoff tanpa pergi ke kasir",
+                "description": "Merupakan aplikasi Inventory toko thrifting. Sebagai pencatatan barang masuk dan badang keluar",
                 "fitur": [
-                    "Scan QRcode untuk Authentikasi customer",
-                    "Real time notification ajax",
-                    "Lacak pesanan pelanggan (pending, proccess, finish)",
-                    "Konfirmasi pesanan pelanggan",
-                    "Shopping cart",
-                    "Pembayaran Midtrans (Snap Payment)",
-                    "forgot password, verify email"
+                    "Manange barang masuk",
+                    "Manange barang keluar",
+                    "Manage Ball (dalam bentuk karung)",
+                    "Manange stok Item",
+                    "Manange stok Item",
+                    "Laporan"
                 ],
                 "technology": [
                     "PHP",
                     "LARAVEL",
-                    "Vanilla Javascript",
-                    "Bootstrap",
+                    "BOOTSTRAP",
+                    "JQUERY",
                     "MYSQL"
                 ],
-                "integration": ["QRcode", "Midtrans", "gmail"]
+                "integration": [],
+                "link": "https://github.com/fahmihwan/inventory-buka-tutup-second-thrift.git"
             }
         }
     ]

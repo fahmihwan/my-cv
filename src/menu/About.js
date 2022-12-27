@@ -62,7 +62,7 @@ const Description = () => {
                         </p>
                     </div>
                     <div className="pt-3 flex">
-                        <FaGithub className="text-4xl mr-3" />
+                        <FaGithub className="text-4xl mr-3 stroke-2 " />
                         <FaLinkedin className="text-4xl mr-3" />
                         <AiOutlineMail className="text-4xl mr-3" />
                         <FaWhatsapp className="text-4xl" />
@@ -71,19 +71,9 @@ const Description = () => {
                 <div className="w-full md:w-3/12 flex justify-center z-10">
                     <ProfileImg />
                 </div>
-                <svg
-                    className="absolute"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1440 320"
-                >
-                    <path
-                        fill="#2f1459"
-                        fill-opacity="1"
-                        d="M0,288L0,192L160,192L160,32L320,32L320,96L480,96L480,160L640,160L640,128L800,128L800,96L960,96L960,224L1120,224L1120,64L1280,64L1280,128L1440,128L1440,320L1280,320L1280,320L1120,320L1120,320L960,320L960,320L800,320L800,320L640,320L640,320L480,320L480,320L320,320L320,320L160,320L160,320L0,320L0,320Z"
-                    ></path>
-                </svg>
             </div>
-            <hr />
+            <SvgDescription />
+            <hr className="border-purple-800" />
         </div>
     );
 };
@@ -225,6 +215,25 @@ const FilterIcon = ({ icon }) => {
             break;
     }
     // return <FaLaravel className="text-2xl" />
+};
+
+const SvgDescription = ({ responsive }) => {
+    return (
+        // <div className="relative hidden md:block">
+        <div className={`relative block`}>
+            <svg
+                className="absolute left-0 bottom-0  right-0 stroke-2 stroke-purple-900 "
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1440 320"
+            >
+                <path
+                    fill="#2f1459"
+                    fill-opacity="1"
+                    d="M0,288L0,192L160,192L160,32L320,32L320,96L480,96L480,160L640,160L640,128L800,128L800,96L960,96L960,224L1120,224L1120,64L1280,64L1280,128L1440,128L1440,320L1280,320L1280,320L1120,320L1120,320L960,320L960,320L800,320L800,320L640,320L640,320L480,320L480,320L320,320L320,320L160,320L160,320L0,320L0,320Z"
+                ></path>
+            </svg>
+        </div>
+    );
 };
 
 const ProgressBar = styled.progress`

@@ -1,124 +1,138 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import "./ScrollbarDetail.css";
 
-import React, { useEffect, useRef, useState } from "react";
-
+import { MdArrowBackIos } from "react-icons/md";
 const Detail = () => {
-    let { detail, primaryImg } = useLocation().state;
+    const navigate = useNavigate();
+    let { detail, primaryImg, title } = useLocation().state;
 
-    const [showImg, setShowImg] = useState(primaryImg.slice(1));
-
-    let dataImg = [];
+    let dataImg = []; // get totalImg and convert to directory folder (string)
     for (let i = 1; i <= detail.totalImg; i++) {
         let dir = `${detail.dir + i}.png`;
         dataImg.push(dir);
     }
-
-    const lengthImgIsExist = dataImg.length <= 4 ? true : false;
-    const [hiddenPrev, setHiddenPrev] = useState(true);
-    const [hiddenNext, setHiddenNext] = useState(lengthImgIsExist);
-
-    const valState = {
-        start: 0,
-        end: !lengthImgIsExist ? 3 : dataImg.length,
-    };
-
-    const [stateIndex, setStateIndex] = useState(valState);
-
-    const filterImg = dataImg.filter((e) => {
-        return (
-            stateIndex.start <= dataImg.indexOf(e) &&
-            stateIndex.end >= dataImg.indexOf(e)
-        );
-    });
-
-    const btnPrev = useRef(false);
-
-    const prev = () => {
-        if (stateIndex.start + 4 <= 4) {
-            setHiddenPrev(true);
-        } else {
-            setStateIndex({
-                start: stateIndex.start - 1,
-                end: stateIndex.end - 1,
-            });
-            setHiddenNext(false);
-        }
-    };
-
-    const btnNext = useRef(false);
-
-    const next = () => {
-        if (stateIndex.start === dataImg.length - 4) {
-            setHiddenNext(true);
-        } else {
-            setStateIndex({
-                start: stateIndex.start + 1,
-                end: stateIndex.end + 1,
-            });
-            setHiddenPrev(false);
-        }
-    };
-
-    useEffect(() => {
-        if (hiddenNext) {
-            btnNext.current.classList.add("hidden");
-        } else {
-            btnNext.current.classList.remove("hidden");
-        }
-        if (hiddenPrev) {
-            btnPrev.current.classList.add("hidden");
-        } else {
-            btnPrev.current.classList.remove("hidden");
-        }
-    }, [hiddenNext, hiddenPrev]);
-
-    const handleHover = (src) => {
-        setShowImg(src);
-    };
-
     return (
-        <div className="px-10 pt-5 pb-52">
-            <div className="mb-5 dark:bg-elFancy dark:text-textFancy">
-                <p className="text-4xl">Detail Portfolio</p>
-                <p className=" text-2xl">Outlaws Studio</p>
-            </div>
-            <div className="flex">
-                <div className="bg-gray-600 rounded border">
-                    <div className="py-3 px-2 flex">
-                        <div className="bg-red-400 w-2 h-2 rounded-full mr-1"></div>
-                        <div className="bg-yellow-400 w-2 h-2 rounded-full mr-1"></div>
-                        <div className="bg-green-400 w-2 h-2 rounded-full mr-1"></div>
-                    </div>
-                    <img src="" alt="" />
-                </div>
+        <div className="px-4 md:px-10 pt-5 pb-52">
+            <div className="mb-5 flex justify-between dark:bg-elFancy dark:text-textFancy ">
+                <p className="text-xl">Detail Portfolio</p>
+                <button
+                    onClick={() => navigate("/portfolio")}
+                    className=" bg-purple-800 px-2 rounded-full text-white flex items-center"
+                >
+                    <MdArrowBackIos /> Back
+                </button>
             </div>
 
-            <div className="mt-5   py-10">
-                <div className="flex">
-                    <button onClick={prev} ref={btnPrev}>
-                        prev
-                    </button>
-                    {filterImg.map((d, i) => {
-                        return (
-                            <div
-                                key={i}
-                                onMouseOver={() => handleHover(d)}
-                                className="w-20 mr-2 flex items-center cursor-pointer"
-                            >
-                                <img src={d} alt="" />
-                            </div>
-                        );
-                    })}
-                    <button onClick={next} ref={btnNext}>
-                        next
-                    </button>
-                </div>
-                <div className="w-full mt-5">
-                    <img src={showImg} alt="" />
-                </div>
-            </div>
+            <SliderEl primaryImg={primaryImg} dataImg={dataImg} />
+            <NoteEl detail={detail} title={title} />
         </div>
     );
 };
 
 export default Detail;
+
+const SliderEl = ({ primaryImg, dataImg }) => {
+    const [showImg, setShowImg] = useState(primaryImg.slice(1)); // primary Image Show
+    const handleMouseEnter = (src) => {
+        setShowImg(src);
+    };
+    return (
+        <div className=" mb-5  bg-elFancy md:flex ">
+            <div className="w-full md:w-3/4  mt-5 md:mt-0 md:mr-5 bg-badgeFancy rouded overflow-hidden">
+                <div className="py-3 px-3 bg-gray-600 flex ">
+                    <div className="bg-red-400 w-1 h-1 rounded-full mr-1"></div>
+                    <div className="bg-yellow-400 w-1 h-1 rounded-full mr-1"></div>
+                    <div className="bg-green-400 w-1 h-1 rounded-full mr-1"></div>
+                </div>
+                <div className="md:py-2 ">
+                    <img
+                        src={showImg}
+                        alt=""
+                        className="w-[900px]  h-[200px] md:h-[460px] object-top  object-contain"
+                    />
+                </div>
+            </div>
+            <div className="flex md:flex-col border-purple-600  overflow-x-scroll md:overflow-x-visible md:overflow-y-scroll md:h-[500px] py-5   items-end w-full md:w-1/4">
+                {dataImg.map((d, i) => {
+                    return (
+                        <img
+                            key={i + 1}
+                            src={d}
+                            alt=""
+                            onMouseEnter={(e) => handleMouseEnter(d)}
+                            className={`w-28 md:w-56 h-28 md:h-28 object-contain md:mb-5 mr-2  md:mx-auto bg-badgeFancy cursor-grab border-red-600 ${
+                                showImg === d ? "border-2 " : "border-0"
+                            }`}
+                        />
+                    );
+                })}
+            </div>
+        </div>
+    );
+};
+
+const NoteEl = ({ detail, title }) => {
+    console.log(detail);
+    return (
+        <div className="w-full ">
+            <div className="mb-5 dark:bg-elFancy dark:text-textFancy ">
+                <p className=" text-2xl text-purple-400">{title}</p>
+            </div>
+            <div className="mb-2">
+                <p className="text-white">Description</p>
+                <p className="text-xs md:text-base">{detail.description}</p>
+            </div>
+            <div className="md:flex">
+                {detail.fitur.length !== 0 && (
+                    <div className="mb-2 w-full md:w-1/2">
+                        <p className="text-white">Fitur</p>
+                        <ul className="text-xs md:text-base list-disc ml-3">
+                            {detail.fitur.map((d) => {
+                                return <li>{d}</li>;
+                            })}
+                        </ul>
+                    </div>
+                )}
+                <div className="w-full md:w-1/2">
+                    <div className="mb-2">
+                        <p className="mb-1 text-white">Technology</p>
+                        <ul className="text-xs  flex flex-wrap">
+                            {detail.technology.map((d) => {
+                                return (
+                                    <li className="mr-2 mb-2 bg-badgeFancy p-1 rounded text-purple-400 ">
+                                        {d}
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    {detail.integration.length !== 0 && (
+                        <div className="mb-2">
+                            <p className="mb-1 text-white">Integration</p>
+                            <ul className="text-sm  flex">
+                                {detail.integration.map((d) => {
+                                    return (
+                                        <li className="mr-3 bg-badgeFancy p-1 rounded text-purple-400">
+                                            {d}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                    )}
+                    <div className="mb-2">
+                        <p className="mb-1 text-white">Link</p>
+                        <a
+                            target={"_blank"}
+                            rel="noreferrer noopener"
+                            href={detail.link}
+                        >
+                            {detail.link}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};

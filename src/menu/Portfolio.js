@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 
@@ -13,7 +13,7 @@ const Portfolio = () => {
                     freelance (if it's public) project list.
                 </p>
             </div>
-            <div className="grid grid:col-span-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid:col-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {porto.data.map((d, i) => {
                     return <Card data={d} key={i} />;
                 })}
@@ -45,21 +45,20 @@ const Card = ({ data }) => {
         }
     `;
 
-    const handleDetail = (data) => {
-        setDetail(data);
+    const handleDetail = (dataDetail, title) => {
+        setDetail(dataDetail);
     };
 
-    useEffect(() => {
-        if (detail !== null) {
-            navigate(`/portfolio/${data.slug}`, {
-                replace: true,
-                state: detail,
-            });
-        }
-    }, [detail]);
+    if (detail !== null) {
+        navigate(`/portfolio/${data.slug}`, {
+            replace: true,
+            state: detail,
+            title: data.title,
+        });
+    }
 
     return (
-        <div className="relative  md:h-72">
+        <div className="relative md:h-72">
             <CardEl>
                 <div className="border ">
                     <img src={data.primaryImg} alt="" />
@@ -67,7 +66,7 @@ const Card = ({ data }) => {
                 <div className="py-5 px-2 flex justify-between ">
                     <p>{data.title}</p>
                     <button
-                        onClick={() => handleDetail(data)}
+                        onClick={() => handleDetail(data, data.title)}
                         className="border p-2 text-white"
                     >
                         See Detail
