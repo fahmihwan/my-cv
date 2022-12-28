@@ -1,20 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ProfileImg from "../components/ProfileImg";
 import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import styled from "styled-components";
 import work_experience from "./../data/work_experience.json";
 import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
-import { SiJavascript } from "react-icons/si";
+import { SiJavascript, SiAngular } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import json_skills from "./../data/skills.json";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const About = () => {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, []);
+
     return (
         <div className="py-10">
             <Description />
             <div className="mx-10">
-                <div className="md:flex  ">
+                <div className="md:flex  " data-aos="fade-up">
                     <div className="w-full md:w-5/12 mb-5 md:mb-0  bg-elfancy rounded px-0 md:px-5 py-2">
                         <p className="text-4xl mb-3">Experience</p>
                         <WorkExperience />
@@ -46,10 +54,18 @@ const Description = () => {
             <div className="flex flex-wrap-reverse  mb-5">
                 <div className="w-full md:w-8/12  text-textFancy z-10">
                     <section className="md:pr-20 mt-5 md:mt-0">
-                        <p className="text-4xl mb-5 hidden md:block ">
+                        <p
+                            className="text-4xl mb-5 hidden md:block "
+                            data-aos="fade-right"
+                            data-aos-delay="100"
+                        >
                             Yo, hello there!
                         </p>
-                        <p className="text-justify">
+                        <p
+                            className="text-justify"
+                            data-aos="fade-right"
+                            data-aos-delay="300"
+                        >
                             I'm Fahmi Ichwanurrohman, you can call me Fahmi.
                             graduated from Information System at Universitas
                             Teknologi Yogyakarta. Focusing an technologies for
@@ -67,7 +83,7 @@ const Description = () => {
                     </section>
                 </div>
                 <div className="w-full md:w-3/12  flex justify-center z-10">
-                    <ProfileImg />
+                    <ProfileImg data-aos="flip-up" />
                 </div>
             </div>
             {/* <SvgDescription /> */}
@@ -134,9 +150,11 @@ const Skills = () => {
                                     <p>{d.title}</p>
                                     <p className="text-xs">{d.value} %</p>
                                 </div>
-                                <ProgressBar value={d.value} max={100}>
-                                    ds
-                                </ProgressBar>
+
+                                <ProgressBar
+                                    value={d.value}
+                                    max={100}
+                                ></ProgressBar>
                             </div>
                         </li>
                     );
@@ -207,6 +225,8 @@ const FilterIcon = ({ icon }) => {
             return <SiJavascript className="text-2xl" />;
         case "PHP":
             return <FaPhp className="text-2xl" />;
+        case "AngularTs":
+            return <SiAngular className="text-2xl" />;
         case "MYSQL":
             return <GrMysql className="text-2xl" />;
         default:

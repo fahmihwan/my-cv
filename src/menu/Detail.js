@@ -17,7 +17,7 @@ const Detail = () => {
                 <p className="text-xl">Detail Portfolio</p>
                 <button
                     onClick={() => navigate("/portfolio")}
-                    className=" bg-purple-800 px-2 rounded-full text-white flex items-center"
+                    className=" bg-purple-800 animate-bounce hover:animate-none  px-2 rounded-full text-white flex items-center"
                 >
                     <MdArrowBackIos /> Back
                 </button>

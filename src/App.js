@@ -25,7 +25,7 @@ function App() {
 
     return (
         <div className="  bg-white  dark:bg-fancy min-h-screen text-black dark:text-gray-400 ">
-            <Snowfall snowflakeCount={8} />
+            {/* <Snowfall snowflakeCount={8} /> */}
             <TopNav handleTheme={handleTheme} />
             <Routes>
                 <Route path="/" element={<Home />} />

@@ -27,7 +27,7 @@ const ProfileImg = () => {
     `;
     return (
         <>
-            <ImageBackground>
+            <ImageBackground data-aos="flip-right" data-aos-duration="500">
                 <img
                     className="w-60"
                     alt="Lightning"

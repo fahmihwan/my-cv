@@ -2,7 +2,7 @@ import React from "react";
 import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import ProfileImg from "../components/ProfileImg";
-import { Animation } from "react-animate-style";
+
 const Home = () => {
     return (
         <>
@@ -12,14 +12,6 @@ const Home = () => {
                         <section className="mb-10">
                             <p className=" text-2xl">
                                 Hi, I'm Fahmi Ichwanurrohman
-                                <Animation
-                                    animationIn="bounceIn"
-                                    animationOut="bounceOut"
-                                >
-                                    <div className="text-white">
-                                        My animated cdasdasdasdaontent
-                                    </div>
-                                </Animation>
                             </p>
                             <p className="mb-3">
                                 I'm currently looking for a new opportunity.
