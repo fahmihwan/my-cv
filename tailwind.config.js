@@ -8,6 +8,7 @@ module.exports = {
                 elFancy: "#181538",
                 textFancy: "#9a93cb",
                 badgeFancy: "#39325d",
+                lightBlue: "#6b5dd3",
             },
         },
     },

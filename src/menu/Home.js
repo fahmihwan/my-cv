@@ -3,7 +3,7 @@ import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import ProfileImg from "../components/ProfileImg";
 
-const Home = () => {
+const Home = ({ darkMode }) => {
     return (
         <>
             <div className="flex flex-col-reverse md:flex-row mt-10 z-50">
@@ -42,7 +42,7 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="w-full md:w-4/12 p-2 flex md:flex-none justify-center  ">
-                    <ProfileImg />
+                    <ProfileImg darkMode={darkMode} />
                 </div>
             </div>
 

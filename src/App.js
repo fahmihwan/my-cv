@@ -7,7 +7,7 @@ import TopNav from "./components/TopNav";
 import Portfolio from "./menu/Portfolio";
 import BottomNav from "./components/BottomNav";
 import Detail from "./menu/Detail";
-import Snowfall from "react-snowfall";
+// import Snowfall from "react-snowfall";
 function App() {
     const [theme, setTheme] = useState("dark");
 
@@ -24,14 +24,17 @@ function App() {
     };
 
     return (
-        <div className="  bg-white  dark:bg-fancy min-h-screen text-black dark:text-gray-400 ">
+        <div className=" bg-[#f6f8fd]  dark:bg-fancy min-h-screen text-black  dark:text-gray-400 ">
             {/* <Snowfall snowflakeCount={8} /> */}
             <TopNav handleTheme={handleTheme} />
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/" element={<Home darkMode={theme} />} />
+                <Route
+                    path="/portfolio"
+                    element={<Portfolio darkMode={theme} />}
+                />
                 <Route path="/portfolio/:id" element={<Detail />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/about" element={<About darkMode={theme} />} />
             </Routes>
             <BottomNav />
         </div>

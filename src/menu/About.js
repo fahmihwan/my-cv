@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import ProfileImg from "../components/ProfileImg";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
-import styled from "styled-components";
 import work_experience from "./../data/work_experience.json";
-import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
-import { SiJavascript, SiAngular } from "react-icons/si";
-import { GrMysql } from "react-icons/gr";
 import json_skills from "./../data/skills.json";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const About = () => {
+// icon
+import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
+import { SiJavascript, SiAngular } from "react-icons/si";
+import { GrMysql } from "react-icons/gr";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { AiOutlineMail } from "react-icons/ai";
+
+const About = ({ darkMode }) => {
     useEffect(() => {
         AOS.init();
         AOS.refresh();
@@ -20,20 +20,20 @@ const About = () => {
 
     return (
         <div className="py-10">
-            <Description />
+            <Description darkMode={darkMode} />
             <div className="mx-10">
-                <div className="md:flex  " data-aos="fade-up">
-                    <div className="w-full md:w-5/12 mb-5 md:mb-0  bg-elfancy rounded px-0 md:px-5 py-2">
+                <div className="md:flex" data-aos="fade-up">
+                    <div className="w-full md:w-5/12 md:mb-0 p-5 mb-10 rounded-lg bg-white dark:bg-elFancy  dark:text-textFancy  ">
                         <p className="text-4xl mb-3">Experience</p>
                         <WorkExperience />
                     </div>
                     <div className="w-full md:w-7/12  ">
                         <div className="md:flex">
-                            <div className="w-full md:w-1/2 bg-elFancy dark:text-textFancy  mb-10 md:mb-0 bg-elfancy rounded mx-0 md:mx-5 p-2">
+                            <div className="w-full md:w-1/2  mb-10 md:mb-0 md:mx-5 p-5 rounded bg-white dark:bg-elFancy dark:text-textFancy   ">
                                 <p className="text-4xl mb-3">Skill</p>
-                                <Skills />
+                                <Skills darkMode={darkMode} />
                             </div>
-                            <div className="w-full md:w-1/2  bg-elFancy dark:text-textFancy mx-0 md:mx-5">
+                            <div className="w-full md:w-1/2 p-5  md:mx-5 rounded bg-white  dark:bg-elFancy dark:text-textFancy ">
                                 <p className="text-4xl mb-3">Education</p>
                                 <Education />
                             </div>
@@ -47,12 +47,12 @@ const About = () => {
 
 export default About;
 
-const Description = () => {
+const Description = ({ darkMode }) => {
     return (
         <div className="w-full px-10 mt-5 pb-10">
             <p className="text-4xl md:hidden">Yo, hello there!</p>
             <div className="flex flex-wrap-reverse  mb-5">
-                <div className="w-full md:w-8/12  text-textFancy z-10">
+                <div className="w-full md:w-8/12 text-black dark:text-textFancy z-10">
                     <section className="md:pr-20 mt-5 md:mt-0">
                         <p
                             className="text-4xl mb-5 hidden md:block "
@@ -62,7 +62,7 @@ const Description = () => {
                             Yo, hello there!
                         </p>
                         <p
-                            className="text-justify"
+                            className="text-justify "
                             data-aos="fade-right"
                             data-aos-delay="300"
                         >
@@ -83,7 +83,7 @@ const Description = () => {
                     </section>
                 </div>
                 <div className="w-full md:w-3/12  flex justify-center z-10">
-                    <ProfileImg data-aos="flip-up" />
+                    <ProfileImg darkMode={darkMode} data-aos="flip-up" />
                 </div>
             </div>
             {/* <SvgDescription /> */}
@@ -94,14 +94,14 @@ const Description = () => {
 
 const WorkExperience = () => {
     return (
-        <div className="relative bg-elFancy text-[#9a93cb]">
-            {work_experience.data.map((d) => {
+        <div className="relative ">
+            {work_experience.data.map((d, i) => {
                 return (
-                    <>
-                        <span className="bg-purple-700  w-5 h-5 rounded-full absolute flex items-center justify-center">
-                            <span className="bg-orange-200 w-2 h-2 block rounded-full"></span>
+                    <div key={`${i}div`}>
+                        <span className="bg-lightBlue dark:bg-purple-700  w-5 h-5 rounded-full absolute flex items-center justify-center">
+                            <span className="bg-white dark:bg-orange-200 w-2 h-2 block rounded-full"></span>
                         </span>
-                        <div className="border-l-4 ml-2 pl-8 border-purple-600 pb-5">
+                        <div className="border-l-4 ml-2 pl-5 md:pl-8 border-lightBlue dark:border-purple-600 pb-5">
                             <div className="mb-1">
                                 <p className="font-semibold ">
                                     {d.title} .{" "}
@@ -109,31 +109,27 @@ const WorkExperience = () => {
                                         {d.category}
                                     </span>
                                 </p>
-                                <p className="">
+                                <p>
                                     {d.company} ·{" "}
-                                    <span className="font-light">
+                                    <span className="font-light text-sm md:text-base">
                                         {d.duration}
                                     </span>
                                 </p>
                             </div>
                             <ul className="list-disc pl-3 text-xs ">
                                 {d.description.map((list, i) => {
-                                    return (
-                                        <>
-                                            <li key={i}>{list}</li>
-                                        </>
-                                    );
+                                    return <li key={i}>{list}</li>;
                                 })}
                             </ul>
                         </div>
-                    </>
+                    </div>
                 );
             })}
         </div>
     );
 };
 
-const Skills = () => {
+const Skills = ({ darkMode }) => {
     return (
         <>
             <ul>
@@ -141,7 +137,7 @@ const Skills = () => {
                     return (
                         <li className="flex mb-3" key={i}>
                             <div className="">
-                                <div className="mr-3 bg-purple-700 opacity-95 text-white w-10 h-10  flex items-center justify-center rounded-full ">
+                                <div className="mr-3 bg-lightBlue dark:bg-purple-700  opacity-95 text-white w-10 h-10  flex items-center justify-center rounded-full ">
                                     <FilterIcon icon={d.title} />
                                 </div>
                             </div>
@@ -150,11 +146,16 @@ const Skills = () => {
                                     <p>{d.title}</p>
                                     <p className="text-xs">{d.value} %</p>
                                 </div>
-
-                                <ProgressBar
+                                <progress
+                                    // className="progressbar-skill-light"
+                                    className={`${
+                                        darkMode === "dark"
+                                            ? "progressbar-skill-dark"
+                                            : "progressbar-skill-light"
+                                    }`}
                                     value={d.value}
                                     max={100}
-                                ></ProgressBar>
+                                ></progress>
                             </div>
                         </li>
                     );
@@ -167,10 +168,10 @@ const Skills = () => {
 const Education = () => {
     return (
         <>
-            <span className="bg-purple-700  w-5 h-5 rounded-full absolute flex items-center justify-center">
-                <span className="bg-orange-200 w-2 h-2 block rounded-full"></span>
+            <span className="bg-lightBlue dark:bg-purple-700  w-5 h-5 rounded-full absolute flex items-center justify-center">
+                <span className="bg-white dark:bg-orange-200 w-2 h-2 block rounded-full"></span>
             </span>
-            <div className="border-l-4 ml-2 pl-4 border-purple-600 pb-5">
+            <div className="border-l-4 ml-2 pl-4 border-lightBlue dark:border-purple-600 pb-5">
                 <div className="mb-1">
                     <p className="font-semibold text-sm">
                         Universitas Teknologi Yogyakarta
@@ -185,10 +186,10 @@ const Education = () => {
                 </div>
             </div>
 
-            <span className="bg-purple-700 w-5 h-5 rounded-full absolute flex items-center justify-center">
-                <span className="bg-orange-200 w-2 h-2 block rounded-full"></span>
+            <span className="bg-lightBlue dark:bg-purple-700 w-5 h-5 rounded-full absolute flex items-center justify-center">
+                <span className="bg-white dark:bg-orange-200 w-2 h-2 block rounded-full"></span>
             </span>
-            <div className="border-l-4 ml-2 pl-4 border-purple-600 pb-5">
+            <div className="border-l-4 ml-2 pl-4 border-lightBlue dark:border-purple-600 pb-5">
                 <div className="mb-1">
                     <p className="font-semibold text-sm">SMAN 1 MAOSPATI</p>
                     <p className="text-sm font-semibold mb-2">IPA</p>
@@ -199,10 +200,10 @@ const Education = () => {
                 </div>
             </div>
 
-            <span className="bg-purple-700 w-5 h-5 rounded-full absolute flex items-center justify-center">
-                <span className="bg-orange-200 w-2 h-2 block rounded-full"></span>
+            <span className="bg-lightBlue dark:bg-purple-700 w-5 h-5 rounded-full absolute flex items-center justify-center">
+                <span className="bg-white dark:bg-orange-200 w-2 h-2 block rounded-full"></span>
             </span>
-            <div className="border-l-4 ml-2 pl-4 border-purple-600 pb-5">
+            <div className="border-l-4 ml-2 pl-4 border-lightBlue dark:border-purple-600 pb-5">
                 <div className="mb-1">
                     <p className="font-semibold text-sm">SMPN 1 MAOSPATI</p>
                     <p className="text-xs">
@@ -232,7 +233,6 @@ const FilterIcon = ({ icon }) => {
         default:
             break;
     }
-    // return <FaLaravel className="text-2xl" />
 };
 
 const SvgDescription = ({ responsive }) => {
@@ -252,22 +252,3 @@ const SvgDescription = ({ responsive }) => {
         </div>
     );
 };
-
-const ProgressBar = styled.progress`
-    width: 100%;
-
-    border-radius: 5px;
-    overflow: hidden;
-    ::-webkit-progress-bar {
-        background-color: #313131;
-    }
-    ::-webkit-progress-value {
-        background: rgb(178, 45, 201);
-        background: linear-gradient(
-            270deg,
-            rgba(178, 45, 201, 1) 12%,
-            rgba(100, 58, 170, 1) 55%,
-            rgba(34, 0, 163, 1) 90%
-        );
-    }
-`;

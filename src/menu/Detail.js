@@ -7,10 +7,12 @@ const Detail = () => {
     let { detail, primaryImg, title } = useLocation().state;
 
     let dataImg = []; // get totalImg and convert to directory folder (string)
+
     for (let i = 1; i <= detail.totalImg; i++) {
         let dir = `${detail.dir + i}.png`;
         dataImg.push(dir);
     }
+
     return (
         <div className="px-4 md:px-10 pt-5 pb-52">
             <div className="mb-5 flex justify-between dark:bg-elFancy dark:text-textFancy ">
