@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ProfileImg from "../components/ProfileImg";
 import work_experience from "./../data/work_experience.json";
 import json_skills from "./../data/skills.json";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 
 // icon
@@ -13,27 +13,34 @@ import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 
 const About = ({ darkMode }) => {
-    useEffect(() => {
-        AOS.init();
-        AOS.refresh();
-    }, []);
-
     return (
         <div className="py-10">
             <Description darkMode={darkMode} />
             <div className="mx-10">
-                <div className="md:flex" data-aos="fade-up">
-                    <div className="w-full md:w-5/12 md:mb-0 p-5 mb-10 rounded-lg bg-white dark:bg-elFancy  dark:text-textFancy  ">
+                <div className="md:flex">
+                    <div
+                        data-aos="fade-down"
+                        data-aos-duration="500"
+                        className="w-full md:w-5/12 md:mb-0 p-5 mb-10 rounded-lg bg-white dark:bg-elFancy  dark:text-textFancy  "
+                    >
                         <p className="text-4xl mb-3">Experience</p>
                         <WorkExperience />
                     </div>
                     <div className="w-full md:w-7/12  ">
                         <div className="md:flex">
-                            <div className="w-full md:w-1/2  mb-10 md:mb-0 md:mx-5 p-5 rounded bg-white dark:bg-elFancy dark:text-textFancy   ">
+                            <div
+                                data-aos="fade-down"
+                                data-aos-duration="1000"
+                                className="w-full md:w-1/2  mb-10 md:mb-0 md:mx-5 p-5 rounded bg-white dark:bg-elFancy dark:text-textFancy   "
+                            >
                                 <p className="text-4xl mb-3">Skill</p>
                                 <Skills darkMode={darkMode} />
                             </div>
-                            <div className="w-full md:w-1/2 p-5  md:mx-5 rounded bg-white  dark:bg-elFancy dark:text-textFancy ">
+                            <div
+                                data-aos="fade-down"
+                                data-aos-duration="1500"
+                                className="w-full md:w-1/2 p-5  md:mx-5 rounded bg-white  dark:bg-elFancy dark:text-textFancy "
+                            >
                                 <p className="text-4xl mb-3">Education</p>
                                 <Education />
                             </div>
@@ -51,9 +58,9 @@ const Description = ({ darkMode }) => {
     return (
         <div className="w-full px-10 mt-5 pb-10">
             <p className="text-4xl md:hidden">Yo, hello there!</p>
-            <div className="flex flex-wrap-reverse  mb-5">
-                <div className="w-full md:w-8/12 text-black dark:text-textFancy z-10">
-                    <section className="md:pr-20 mt-5 md:mt-0">
+            <div className="flex flex-wrap-reverse mb-5">
+                <div className="w-full md:w-8/12 md:px-5 text-black dark:text-textFancy z-10">
+                    <section className="mt-5 md:mt-0">
                         <p
                             className="text-4xl mb-5 hidden md:block "
                             data-aos="fade-right"
@@ -82,7 +89,7 @@ const Description = ({ darkMode }) => {
                         <FaWhatsapp className="text-4xl" />
                     </section>
                 </div>
-                <div className="w-full md:w-3/12  flex justify-center z-10">
+                <div className="w-full md:w-3/12 flex justify-center z-10">
                     <ProfileImg darkMode={darkMode} data-aos="flip-up" />
                 </div>
             </div>

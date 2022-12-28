@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -8,17 +8,27 @@ import porto from "./../data/porto.json";
 
 const Portfolio = ({ darkMode }) => {
     return (
-        <div className="px-10 pt-5 pb-52">
-            <div className="mb-5 dark:bg-elFancy dark:text-textFancy">
-                <p className="text-4xl">Portfolio</p>
-                <p className="animate__bounce text-sm md:text-base">
-                    This is my previous works, personal (experiments), and
-                    freelance (if it's public) project list.
-                </p>
+        <div className="px-10 pt-5 pb-52 ">
+            <div className="mb-5  px-2 lg:flex justify-between items-center dark:bg-elFancy dark:text-textFancy ">
+                <div className="mb-3 lg:mb-0 ">
+                    <p className="text-4xl mb-3">Portfolio</p>
+                    <p className=" text-xs md:text-base">
+                        This is my previous works, personal (experiments), and
+                        freelance (if it's public) project list.
+                    </p>
+                </div>
+                <span className=" text-white rounded">7 items</span>
             </div>
             <div className="grid grid:col-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {porto.data.map((d, i) => {
-                    return <Card darkMode={darkMode} data={d} key={i} />;
+                    return (
+                        <Card
+                            darkMode={darkMode}
+                            data={d}
+                            key={i}
+                            increment={i}
+                        />
+                    );
                 })}
             </div>
         </div>
@@ -27,13 +37,25 @@ const Portfolio = ({ darkMode }) => {
 
 export default Portfolio;
 
-const Card = ({ darkMode, data }) => {
+const Card = ({ darkMode, data, increment }) => {
     const [detail, setDetail] = useState(null);
     const navigate = useNavigate();
 
-    const handleDetail = (dataDetail, title) => {
+    const handleDetail = (dataDetail) => {
         setDetail(dataDetail);
     };
+
+    const [size, setSize] = useState(0);
+
+    useLayoutEffect(() => {
+        function updateSize() {
+            setSize(window.innerWidth);
+        }
+        window.addEventListener("resize", updateSize);
+        updateSize();
+
+        return () => window.removeEventListener("resize", updateSize);
+    }, [size]);
 
     if (detail !== null) {
         navigate(`/portfolio/${data.slug}`, {
@@ -44,7 +66,12 @@ const Card = ({ darkMode, data }) => {
     }
 
     return (
-        <div className="relative group md:h-72  ">
+        <div
+            data-aos="zoom-in"
+            data-aos-offset="0"
+            data-aos-delay={size > 650 ? 50 * increment : 100}
+            className="relative group md:h-72"
+        >
             {/* <div className="listPortoDark"> */}
             <div
                 className={

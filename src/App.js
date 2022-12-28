@@ -7,8 +7,14 @@ import TopNav from "./components/TopNav";
 import Portfolio from "./menu/Portfolio";
 import BottomNav from "./components/BottomNav";
 import Detail from "./menu/Detail";
+import AOS from "aos";
 // import Snowfall from "react-snowfall";
 function App() {
+    useEffect(() => {
+        AOS.init();
+        // AOS.refresh();
+    }, []);
+
     const [theme, setTheme] = useState("dark");
 
     useEffect(() => {

@@ -35,39 +35,53 @@ export default Detail;
 
 const SliderEl = ({ primaryImg, dataImg }) => {
     const [showImg, setShowImg] = useState(primaryImg.slice(1)); // primary Image Show
-    const handleMouseEnter = (src) => {
-        setShowImg(src);
-    };
+
     return (
-        <div className=" mb-5  bg-elFancy md:flex ">
-            <div className="w-full md:w-3/4  mt-5 md:mt-0 md:mr-5 bg-badgeFancy rouded overflow-hidden">
-                <div className="py-3 px-3 bg-gray-600 flex ">
-                    <div className="bg-red-400 w-1 h-1 rounded-full mr-1"></div>
-                    <div className="bg-yellow-400 w-1 h-1 rounded-full mr-1"></div>
-                    <div className="bg-green-400 w-1 h-1 rounded-full mr-1"></div>
+        <div className=" mb-5 lg:flex ">
+            <div className="w-full lg:w-3/4 my-5 md:mt-0 md:mr-5  rounded overflow-hidden bg-violet-400 dark:bg-badgeFancy">
+                <div className="py-2 md:py-4 px-3 bg-gray-600 flex ">
+                    <div className="bg-red-400 w-2 h-2 rounded-full mr-1"></div>
+                    <div className="bg-yellow-400 w-2 h-2 rounded-full mr-1"></div>
+                    <div className="bg-green-400 w-2 h-2 rounded-full mr-1"></div>
                 </div>
-                <div className="md:py-2 ">
+                <div className=" relative ">
+                    <img
+                        className="absolute h-screen"
+                        src="/foto-profile/bg-img.jpg"
+                        alt=""
+                    />
                     <img
                         src={showImg}
                         alt=""
-                        className="w-[900px]  h-[200px] md:h-[460px] object-top  object-contain"
+                        className="relative px-1 py-5 md:px-5 z-10 "
                     />
                 </div>
             </div>
-            <div className="flex md:flex-col border-purple-600  overflow-x-scroll md:overflow-x-visible md:overflow-y-scroll md:h-[500px] py-5   items-end w-full md:w-1/4">
-                {dataImg.map((d, i) => {
-                    return (
-                        <img
-                            key={i + 1}
-                            src={d}
-                            alt=""
-                            onMouseEnter={(e) => handleMouseEnter(d)}
-                            className={`w-28 md:w-56 h-28 md:h-28 object-contain md:mb-5 mr-2  md:mx-auto bg-badgeFancy cursor-grab border-red-600 ${
-                                showImg === d ? "border-2 " : "border-0"
-                            }`}
-                        />
-                    );
-                })}
+
+            <div className="w-full lg:w-1/4 rounded bg-lightBlue md:bg-white dark:bg-elFancy">
+                {/* // overflow-x-scroll 
+                // md:overflow-x-visible 
+                // overflow-y-visible 
+                // md:overflow-y-scroll  */}
+                <div
+                    className="flex lg:flex-col border-purple-600
+                overflow-x-scroll  lg:overflow-x-visible lg:overflow-y-scroll
+                lg:h-[540px]  items-end "
+                >
+                    {dataImg.map((d, i) => {
+                        return (
+                            <img
+                                key={i + 1}
+                                src={d}
+                                alt=""
+                                className={`w-28 md:w-56 h-20 md:h-28 object-contain md:mb-5 mr-2  lg:mx-auto bg-lightBlue dark:bg-badgeFancy border-orange-400 dark:border-purple-600 duration-150 ${
+                                    showImg === d ? "border-4 " : "border-0"
+                                }`}
+                                onMouseEnter={(e) => setShowImg(d)}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );
@@ -125,6 +139,7 @@ const NoteEl = ({ detail, title }) => {
                     <div className="mb-2">
                         <p className="mb-1 text-white">Link</p>
                         <a
+                            className="text-blue-600 underline underline-offset-2"
                             target={"_blank"}
                             rel="noreferrer noopener"
                             href={detail.link}
