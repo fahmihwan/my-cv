@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
 import { SiJavascript, SiAngular } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 
 const About = ({ darkMode }) => {
@@ -23,7 +23,9 @@ const About = ({ darkMode }) => {
                         data-aos-duration="500"
                         className="w-full md:w-5/12 md:mb-0 p-5 mb-10 rounded-lg bg-white dark:bg-elFancy  dark:text-textFancy  "
                     >
-                        <p className="text-4xl mb-3">Experience</p>
+                        <p className="text-4xl mb-3 text-black dark:text-purple-600">
+                            Experience
+                        </p>
                         <WorkExperience />
                     </div>
                     <div className="w-full md:w-7/12  ">
@@ -33,7 +35,9 @@ const About = ({ darkMode }) => {
                                 data-aos-duration="1000"
                                 className="w-full md:w-1/2  mb-10 md:mb-0 md:mx-5 p-5 rounded bg-white dark:bg-elFancy dark:text-textFancy   "
                             >
-                                <p className="text-4xl mb-3">Skill</p>
+                                <p className="text-4xl mb-3 text-black dark:text-purple-600">
+                                    Skill
+                                </p>
                                 <Skills darkMode={darkMode} />
                             </div>
                             <div
@@ -41,7 +45,9 @@ const About = ({ darkMode }) => {
                                 data-aos-duration="1500"
                                 className="w-full md:w-1/2 p-5  md:mx-5 rounded bg-white  dark:bg-elFancy dark:text-textFancy "
                             >
-                                <p className="text-4xl mb-3">Education</p>
+                                <p className="text-4xl mb-3 text-black dark:text-purple-600">
+                                    Education
+                                </p>
                                 <Education />
                             </div>
                         </div>
@@ -57,19 +63,21 @@ export default About;
 const Description = ({ darkMode }) => {
     return (
         <div className="w-full px-10 mt-5 pb-10">
-            <p className="text-4xl md:hidden">Yo, hello there!</p>
+            <p className="text-4xl md:hidden text-black dark:text-purple-600">
+                Yo, hello there!
+            </p>
             <div className="flex flex-wrap-reverse mb-5">
                 <div className="w-full md:w-8/12 md:px-5 text-black dark:text-textFancy z-10">
                     <section className="mt-5 md:mt-0">
                         <p
-                            className="text-4xl mb-5 hidden md:block "
+                            className="text-4xl mb-5 hidden md:block text-black dark:text-purple-600 "
                             data-aos="fade-right"
                             data-aos-delay="100"
                         >
                             Yo, hello there!
                         </p>
                         <p
-                            className="text-justify "
+                            className="text-justify text-black dark:text-sky-500"
                             data-aos="fade-right"
                             data-aos-delay="300"
                         >
@@ -83,10 +91,30 @@ const Description = ({ darkMode }) => {
                         </p>
                     </section>
                     <section className="pt-3 mt-5 flex">
-                        <FaGithub className="text-4xl mr-3 stroke-2 " />
-                        <FaLinkedin className="text-4xl mr-3" />
-                        <AiOutlineMail className="text-4xl mr-3" />
-                        <FaWhatsapp className="text-4xl" />
+                        <a
+                            className="text-lightBlue dark:text-purple-500 "
+                            target={"_blank"}
+                            rel="noreferrer noopener"
+                            href="https://github.com/fahmihwan"
+                        >
+                            <FaGithub className="text-4xl mr-3 stroke-2 " />
+                        </a>
+                        <a
+                            className="text-lightBlue dark:text-purple-500 "
+                            target={"_blank"}
+                            rel="noreferrer noopener"
+                            href="https://www.linkedin.com/in/fahmi-i-40a864111/"
+                        >
+                            <FaLinkedin className="text-4xl mr-3" />
+                        </a>
+                        <a
+                            className="text-lightBlue dark:text-purple-500 "
+                            target={"_blank"}
+                            rel="noreferrer noopener"
+                            href="mailto:fahmiiwan86@gmail.com"
+                        >
+                            <AiOutlineMail className="text-4xl mr-3" />
+                        </a>
                     </section>
                 </div>
                 <div className="w-full md:w-3/12 flex justify-center z-10">

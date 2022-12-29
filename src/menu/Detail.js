@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 
 import { MdArrowBackIos } from "react-icons/md";
+import Modal from "../components/Modal";
 const Detail = () => {
     const navigate = useNavigate();
     let { detail, primaryImg, title } = useLocation().state;
@@ -35,6 +36,7 @@ export default Detail;
 
 const SliderEl = ({ primaryImg, dataImg }) => {
     const [showImg, setShowImg] = useState(primaryImg.slice(1)); // primary Image Show
+    const [showModal, setShowModal] = useState(false);
 
     return (
         <div className=" mb-5 lg:flex ">
@@ -44,25 +46,28 @@ const SliderEl = ({ primaryImg, dataImg }) => {
                     <div className="bg-yellow-400 w-2 h-2 rounded-full mr-1"></div>
                     <div className="bg-green-400 w-2 h-2 rounded-full mr-1"></div>
                 </div>
-                <div className=" relative ">
+                {/* modal */}
+                <Modal showModal={showModal} setShowModal={setShowModal} />
+                <div
+                    className="relative overflow-hidden"
+                    onClick={() => setShowModal(true)}
+                >
                     <img
-                        className="absolute h-screen"
+                        className="absolute h-screen blur"
                         src="/foto-profile/bg-img.jpg"
                         alt=""
                     />
                     <img
                         src={showImg}
                         alt=""
-                        className="relative px-1 py-5 md:px-5 z-10 "
+                        className="relative px-1 py-5 md:px-5 z-10 object-contain md:object-contain
+                        h-[240px] h-max-[430px] md:h-max-[0px] md:h-[500px]
+                        mx-auto "
                     />
                 </div>
             </div>
 
             <div className="w-full lg:w-1/4 rounded bg-lightBlue md:bg-white dark:bg-elFancy">
-                {/* // overflow-x-scroll 
-                // md:overflow-x-visible 
-                // overflow-y-visible 
-                // md:overflow-y-scroll  */}
                 <div
                     className="flex lg:flex-col border-purple-600
                 overflow-x-scroll  lg:overflow-x-visible lg:overflow-y-scroll
@@ -88,20 +93,25 @@ const SliderEl = ({ primaryImg, dataImg }) => {
 };
 
 const NoteEl = ({ detail, title }) => {
-    console.log(detail);
     return (
         <div className="w-full ">
             <div className="mb-5 dark:bg-elFancy dark:text-textFancy ">
                 <p className=" text-2xl text-purple-400">{title}</p>
             </div>
-            <div className="mb-2">
-                <p className="text-white">Description</p>
-                <p className="text-xs md:text-base">{detail.description}</p>
+            <div className="mb-2 md:mb-5">
+                <p className="text-black font-bold dark:text-white ">
+                    Description
+                </p>
+                <p className="text-xs md:text-base text-justify">
+                    {detail.description}
+                </p>
             </div>
             <div className="md:flex">
                 {detail.fitur.length !== 0 && (
                     <div className="mb-2 w-full md:w-1/2">
-                        <p className="text-white">Fitur</p>
+                        <p className="text-black font-bold dark:text-white">
+                            Fitur
+                        </p>
                         <ul className="text-xs md:text-base list-disc ml-3">
                             {detail.fitur.map((d) => {
                                 return <li>{d}</li>;
@@ -111,11 +121,13 @@ const NoteEl = ({ detail, title }) => {
                 )}
                 <div className="w-full md:w-1/2">
                     <div className="mb-2">
-                        <p className="mb-1 text-white">Technology</p>
+                        <p className="mb-1 text-black font-bold dark:text-white">
+                            Technology
+                        </p>
                         <ul className="text-xs  flex flex-wrap">
                             {detail.technology.map((d) => {
                                 return (
-                                    <li className="mr-2 mb-2 bg-badgeFancy p-1 rounded text-purple-400 ">
+                                    <li className="mr-2 mb-2 p-1 rounded bg-lightBlue  dark:bg-badgeFancy text-white dark:text-purple-400 ">
                                         {d}
                                     </li>
                                 );
@@ -124,11 +136,13 @@ const NoteEl = ({ detail, title }) => {
                     </div>
                     {detail.integration.length !== 0 && (
                         <div className="mb-2">
-                            <p className="mb-1 text-white">Integration</p>
+                            <p className="mb-1 text-black font-bold dark:text-white">
+                                Integration
+                            </p>
                             <ul className="text-sm  flex">
                                 {detail.integration.map((d) => {
                                     return (
-                                        <li className="mr-3 bg-badgeFancy p-1 rounded text-purple-400">
+                                        <li className="mr-3 p-1 rounded bg-lightBlue  dark:bg-badgeFancy text-white dark:text-purple-400">
                                             {d}
                                         </li>
                                     );
@@ -137,7 +151,9 @@ const NoteEl = ({ detail, title }) => {
                         </div>
                     )}
                     <div className="mb-2">
-                        <p className="mb-1 text-white">Link</p>
+                        <p className="mb-1 text-black font-bold dark:text-white">
+                            Link
+                        </p>
                         <a
                             className="text-blue-600 underline underline-offset-2"
                             target={"_blank"}

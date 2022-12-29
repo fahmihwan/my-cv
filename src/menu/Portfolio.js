@@ -9,15 +9,17 @@ import porto from "./../data/porto.json";
 const Portfolio = ({ darkMode }) => {
     return (
         <div className="px-10 pt-5 pb-52 ">
-            <div className="mb-5  px-2 lg:flex justify-between items-center dark:bg-elFancy dark:text-textFancy ">
-                <div className="mb-3 lg:mb-0 ">
+            <div className="mb-5  px-2 lg:flex justify-between items-center dark:bg-elFancy ">
+                <div className="mb-3 lg:mb-0 dark:text-sky-500">
                     <p className="text-4xl mb-3">Portfolio</p>
-                    <p className=" text-xs md:text-base">
+                    <p className=" text-xs md:text-base ">
                         This is my previous works, personal (experiments), and
                         freelance (if it's public) project list.
                     </p>
                 </div>
-                <span className=" text-white rounded">7 items</span>
+                <span className=" dark:text-white text-black rounded font-bold">
+                    7 items
+                </span>
             </div>
             <div className="grid grid:col-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {porto.data.map((d, i) => {
@@ -69,7 +71,7 @@ const Card = ({ darkMode, data, increment }) => {
         <div
             data-aos="zoom-in"
             data-aos-offset="0"
-            data-aos-delay={size > 650 ? 50 * increment : 100}
+            data-aos-delay={size > 650 ? 50 * increment : 200}
             className="relative group md:h-72"
         >
             {/* <div className="listPortoDark"> */}

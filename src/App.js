@@ -12,7 +12,7 @@ import AOS from "aos";
 function App() {
     useEffect(() => {
         AOS.init();
-        // AOS.refresh();
+        AOS.refresh();
     }, []);
 
     const [theme, setTheme] = useState("dark");
