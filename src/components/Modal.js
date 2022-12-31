@@ -1,41 +1,28 @@
 import React from "react";
 
-const Modal = ({ showModal, setShowModal }) => {
+const Modal = ({ showImg, showModal, setShowModal }) => {
     return (
         <div>
             {showModal ? (
                 <>
-                    <div className="flex  backdrop-blur-sm justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                                <div className="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t ">
-                                    <h3 className="text-3xl font=semibold">
-                                        General Info
-                                    </h3>
-                                    <button
-                                        className="bg-transparent border-0 text-black float-right"
-                                        onClick={() => setShowModal(false)}
-                                    >
-                                        <span className="text-black opacity-7 h-6 w-6 text-xl block bg-gray-400 py-0 rounded-full">
-                                            x
-                                        </span>
-                                    </button>
-                                </div>
-                                <div className="relative p-6 flex-auto">
-                                    <p className="text-9xl text-red-500">
-                                        PROSESSS
-                                    </p>
-                                </div>
-                                <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                                    <button
-                                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1"
-                                        type="button"
-                                        onClick={() => setShowModal(false)}
-                                    >
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
+                    <div
+                        onClick={() => setShowModal(false)}
+                        // className="flex  backdrop-blur-xl justify-center items-center  outline-none focus:outline-none"
+                        className="flex  backdrop-blur-xl justify-center items-center w-full  overflow-x-hidden overflow-y-auto fixed inset-0 z-50"
+                    >
+                        <div className="  w-11/12 h-11/12 lg:max-m-28  rounded overflow-hidden">
+                            <button className="bg-purple-700 w-full lg:w-40 float-right hidden md:block  text-white mb-5 mt-2 md:m-2 py-3 md:py-1 px-1 rounded focus:outline-white">
+                                Close
+                            </button>
+                            <div className="clear-right"></div>
+                            <img
+                                className="mx-auto object-contain h-[540px]  h-max-[580px] md:h-max-[0px] md:h-[580px]"
+                                src={showImg}
+                                alt=""
+                            />
+                            <button className="bg-purple-700 w-full md:hidden text-white mb-5 mt-2 md:m-2 py-3 md:py-1 px-1 rounded">
+                                Close
+                            </button>
                         </div>
                     </div>
                 </>

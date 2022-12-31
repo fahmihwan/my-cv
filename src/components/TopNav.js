@@ -1,20 +1,19 @@
-import { Link, useLocation, useMatch } from "react-router-dom";
+import { Link, useMatch } from "react-router-dom";
 import React from "react";
 
 import {} from "react-router-dom";
 const TopNav = ({ handleTheme }) => {
-    // const location = useLocation();
-
-    const cek = useMatch("/portfolio/:id");
-    console.log(cek); //null
+    // const cek = useMatch("/portfolio/:id");
+    // console.log(cek); //null
 
     const shadowCss = {
         boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+        zIndex: "9999",
     };
 
     return (
         <div
-            style={shadowCss}
+            style={{ shadowCss }}
             className="p-3 flex justify-between bg-white dark:bg-[#281f53]"
         >
             <div>

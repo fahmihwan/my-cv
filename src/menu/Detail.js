@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 import { MdArrowBackIos } from "react-icons/md";
 import Modal from "../components/Modal";
-const Detail = () => {
+const Detail = ({ showModal, setShowModal }) => {
     const navigate = useNavigate();
     let { detail, primaryImg, title } = useLocation().state;
 
@@ -15,7 +15,7 @@ const Detail = () => {
     }
 
     return (
-        <div className="px-4 md:px-10 pt-5 pb-52">
+        <div className={`px-4 md:px-10 pt-5 pb-52`}>
             <div className="mb-5 flex justify-between dark:bg-elFancy dark:text-textFancy ">
                 <p className="text-xl">Detail Portfolio</p>
                 <button
@@ -26,7 +26,12 @@ const Detail = () => {
                 </button>
             </div>
 
-            <SliderEl primaryImg={primaryImg} dataImg={dataImg} />
+            <SliderEl
+                primaryImg={primaryImg}
+                dataImg={dataImg}
+                showModal={showModal}
+                setShowModal={setShowModal}
+            />
             <NoteEl detail={detail} title={title} />
         </div>
     );
@@ -34,9 +39,8 @@ const Detail = () => {
 
 export default Detail;
 
-const SliderEl = ({ primaryImg, dataImg }) => {
+const SliderEl = ({ primaryImg, dataImg, showModal, setShowModal }) => {
     const [showImg, setShowImg] = useState(primaryImg.slice(1)); // primary Image Show
-    const [showModal, setShowModal] = useState(false);
 
     return (
         <div className=" mb-5 lg:flex ">
@@ -47,7 +51,11 @@ const SliderEl = ({ primaryImg, dataImg }) => {
                     <div className="bg-green-400 w-2 h-2 rounded-full mr-1"></div>
                 </div>
                 {/* modal */}
-                <Modal showModal={showModal} setShowModal={setShowModal} />
+                <Modal
+                    showImg={showImg}
+                    showModal={showModal}
+                    setShowModal={setShowModal}
+                />
                 <div
                     className="relative overflow-hidden"
                     onClick={() => setShowModal(true)}

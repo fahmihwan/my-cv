@@ -5,9 +5,13 @@ import { IoBagCheckSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 
-const BottomNav = () => {
+const BottomNav = ({ showModal }) => {
     return (
-        <div className="p-2 sticky bottom-0 z-50 md:hidden ">
+        <div
+            className={`p-2 sticky bottom-0 z-50 ${
+                !showModal ? "" : "hidden"
+            } md:hidden `}
+        >
             <div className="bg-lightBlue dark:bg-[#281f53] border border-lightBlue  dark:border-[#6b5dd3]  flex p-2 text-xs dark:rounded ">
                 <div className="w-10/12 flex">
                     <div className="w-1/3 px-1 ">

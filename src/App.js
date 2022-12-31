@@ -8,7 +8,7 @@ import Portfolio from "./menu/Portfolio";
 import BottomNav from "./components/BottomNav";
 import Detail from "./menu/Detail";
 import AOS from "aos";
-// import Snowfall from "react-snowfall";
+import Snowfall from "react-snowfall";
 function App() {
     useEffect(() => {
         AOS.init();
@@ -16,6 +16,7 @@ function App() {
     }, []);
 
     const [theme, setTheme] = useState("dark");
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         if (theme === "dark") {
@@ -31,18 +32,29 @@ function App() {
 
     return (
         <div className=" bg-[#f6f8fd]  dark:bg-fancy min-h-screen text-black  dark:text-gray-400 ">
-            {/* <Snowfall snowflakeCount={8} /> */}
             <TopNav handleTheme={handleTheme} />
+            {!showModal && theme !== "light" && (
+                <Snowfall snowflakeCount={40} />
+            )}
+
             <Routes>
                 <Route path="/" element={<Home darkMode={theme} />} />
                 <Route
                     path="/portfolio"
                     element={<Portfolio darkMode={theme} />}
                 />
-                <Route path="/portfolio/:id" element={<Detail />} />
+                <Route
+                    path="/portfolio/:id"
+                    element={
+                        <Detail
+                            showModal={showModal}
+                            setShowModal={setShowModal}
+                        />
+                    }
+                />
                 <Route path="/about" element={<About darkMode={theme} />} />
             </Routes>
-            <BottomNav />
+            <BottomNav showModal={showModal} />
         </div>
     );
 }
