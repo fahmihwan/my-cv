@@ -81,13 +81,10 @@ const Description = ({ darkMode }) => {
                             data-aos="fade-right"
                             data-aos-delay="300"
                         >
-                            I'm Fahmi Ichwanurrohman, you can call me Fahmi.
-                            graduated from Information System at Universitas
-                            Teknologi Yogyakarta. Focusing an technologies for
-                            web development with PHP and Javascript, such
-                            Laravel and React. I love to learn all of new
-                            things. Recently, I'm learning React and Laravel
-                            development.
+                            My name is Fahmi Ichwanurrohman, i am a fresh
+                            graduate, I love to learn all of new things.
+                            currently i am focusing my skill especially as Web
+                            developer used PHP and Javascript
                         </p>
                     </section>
                     <section className="pt-3 mt-5 flex">

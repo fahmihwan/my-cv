@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 import { MdArrowBackIos } from "react-icons/md";
 import Modal from "../components/Modal";
+
 const Detail = ({ showModal, setShowModal }) => {
     const navigate = useNavigate();
     let { detail, primaryImg, title } = useLocation().state;
@@ -56,12 +57,13 @@ const SliderEl = ({ primaryImg, dataImg, showModal, setShowModal }) => {
                     showModal={showModal}
                     setShowModal={setShowModal}
                 />
+
                 <div
-                    className="relative overflow-hidden"
+                    className="relative overflow-hidden cursor-zoom-in"
                     onClick={() => setShowModal(true)}
                 >
                     <img
-                        className="absolute h-screen blur"
+                        className="absolute h-screen blur "
                         src="/foto-profile/bg-img.jpg"
                         alt=""
                     />

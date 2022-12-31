@@ -13,19 +13,17 @@ function App() {
     useEffect(() => {
         AOS.init();
         AOS.refresh();
+        document.body.style.overflow = "";
     }, []);
 
     const [theme, setTheme] = useState("dark");
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
-        if (theme === "dark") {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
+        theme === "dark"
+            ? document.documentElement.classList.add("dark")
+            : document.documentElement.classList.remove("dark");
     }, [theme]);
-
     const handleTheme = () => {
         setTheme(theme === "dark" ? "light" : "dark");
     };
@@ -33,9 +31,9 @@ function App() {
     return (
         <div className=" bg-[#f6f8fd]  dark:bg-fancy min-h-screen text-black  dark:text-gray-400 ">
             <TopNav handleTheme={handleTheme} />
-            {!showModal && theme !== "light" && (
+            {/* {!showModal && theme !== "light" && (
                 <Snowfall snowflakeCount={40} />
-            )}
+            )} */}
 
             <Routes>
                 <Route path="/" element={<Home darkMode={theme} />} />
