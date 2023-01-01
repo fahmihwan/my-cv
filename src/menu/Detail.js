@@ -120,11 +120,11 @@ const NoteEl = ({ detail, title }) => {
                 {detail.fitur.length !== 0 && (
                     <div className="mb-2 w-full md:w-1/2">
                         <p className="text-black font-bold dark:text-white">
-                            Fitur
+                            Features
                         </p>
                         <ul className="text-xs md:text-base list-disc ml-3">
-                            {detail.fitur.map((d) => {
-                                return <li>{d}</li>;
+                            {detail.fitur.map((d, i) => {
+                                return <li key={i}>{d}</li>;
                             })}
                         </ul>
                     </div>
@@ -135,9 +135,12 @@ const NoteEl = ({ detail, title }) => {
                             Technology
                         </p>
                         <ul className="text-xs  flex flex-wrap">
-                            {detail.technology.map((d) => {
+                            {detail.technology.map((d, i) => {
                                 return (
-                                    <li className="mr-2 mb-2 p-1 rounded bg-lightBlue  dark:bg-badgeFancy text-white dark:text-purple-400 ">
+                                    <li
+                                        key={i}
+                                        className="mr-2 mb-2 p-1 rounded bg-lightBlue  dark:bg-badgeFancy text-white dark:text-purple-400 "
+                                    >
                                         {d}
                                     </li>
                                 );
@@ -150,9 +153,12 @@ const NoteEl = ({ detail, title }) => {
                                 Integration
                             </p>
                             <ul className="text-sm  flex">
-                                {detail.integration.map((d) => {
+                                {detail.integration.map((d, i) => {
                                     return (
-                                        <li className="mr-3 p-1 rounded bg-lightBlue  dark:bg-badgeFancy text-white dark:text-purple-400">
+                                        <li
+                                            key={i}
+                                            className="mr-3 p-1 rounded bg-lightBlue  dark:bg-badgeFancy text-white dark:text-purple-400"
+                                        >
                                             {d}
                                         </li>
                                     );

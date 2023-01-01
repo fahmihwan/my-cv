@@ -10,7 +10,7 @@ const Portfolio = ({ darkMode }) => {
     return (
         <div className="px-10 pt-5 pb-52 ">
             <div className="mb-5  px-2 lg:flex justify-between items-center dark:bg-elFancy ">
-                <div className="mb-3 lg:mb-0 dark:text-sky-500">
+                <div className="mb-3 lg:mb-0 dark:text-purple-500">
                     <p className="text-4xl mb-3">Portfolio</p>
                     <p className=" text-xs md:text-base ">
                         This is my previous works, personal (experiments), and
@@ -18,7 +18,7 @@ const Portfolio = ({ darkMode }) => {
                     </p>
                 </div>
                 <span className=" dark:text-white text-black rounded font-bold">
-                    7 items
+                    {porto.data.length} items
                 </span>
             </div>
             <div className="grid grid:col-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -27,8 +27,8 @@ const Portfolio = ({ darkMode }) => {
                         <Card
                             darkMode={darkMode}
                             data={d}
+                            increment={i + 1}
                             key={i}
-                            increment={i}
                         />
                     );
                 })}

@@ -5,6 +5,7 @@ import json_skills from "./../data/skills.json";
 
 import "aos/dist/aos.css";
 
+import summary from "./../data/summary.json";
 // icon
 import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
 import { SiJavascript, SiAngular } from "react-icons/si";
@@ -43,7 +44,7 @@ const About = ({ darkMode }) => {
                             <div
                                 data-aos="fade-down"
                                 data-aos-duration="1500"
-                                className="w-full md:w-1/2 p-5  md:mx-5 rounded bg-white  dark:bg-elFancy dark:text-textFancy "
+                                className="w-full md:w-1/2 p-5 h-80  md:mx-5 rounded bg-white  dark:bg-elFancy dark:text-textFancy "
                             >
                                 <p className="text-4xl mb-3 text-black dark:text-purple-600">
                                     Education
@@ -63,12 +64,12 @@ export default About;
 const Description = ({ darkMode }) => {
     return (
         <div className="w-full px-10 mt-5 pb-10">
-            <p className="text-4xl md:hidden text-black dark:text-purple-600">
+            <p className="text-4xl pb-10 md:hidden text-black dark:text-purple-600">
                 Yo, hello there!
             </p>
             <div className="flex flex-wrap-reverse mb-5">
                 <div className="w-full md:w-8/12 md:px-5 text-black dark:text-textFancy z-10">
-                    <section className="mt-5 md:mt-0">
+                    <section className="mt-5 md:mt-0 ">
                         <p
                             className="text-4xl mb-5 hidden md:block text-black dark:text-purple-600 "
                             data-aos="fade-right"
@@ -77,14 +78,11 @@ const Description = ({ darkMode }) => {
                             Yo, hello there!
                         </p>
                         <p
-                            className="text-justify text-black dark:text-sky-500"
+                            className="text-justify text-black dark:text-purple-500"
                             data-aos="fade-right"
                             data-aos-delay="300"
                         >
-                            My name is Fahmi Ichwanurrohman, i am a fresh
-                            graduate, I love to learn all of new things.
-                            currently i am focusing my skill especially as Web
-                            developer used PHP and Javascript
+                            {summary.abut}
                         </p>
                     </section>
                     <section className="pt-3 mt-5 flex">
@@ -212,8 +210,8 @@ const Education = () => {
                         S1 Sistem Informasi
                     </p>
                     <p className="text-xs ">
-                        Lulus dari S1 Sistem Informasi Universitas Teknologi
-                        Yogyakarta pada tahun 2022 dengan IPK 3.26.
+                        Graduated from Yogyakarta Technology University's S1
+                        Information System in 2022 with a GPA of 3.26.
                     </p>
                 </div>
             </div>
@@ -226,21 +224,7 @@ const Education = () => {
                     <p className="font-semibold text-sm">SMAN 1 MAOSPATI</p>
                     <p className="text-sm font-semibold mb-2">IPA</p>
                     <p className="text-xs">
-                        Lulus dari S1 Sistem Informasi Universitas Teknologi
-                        Yogyakarta pada tahun 2022 dengan IPK 3.26.
-                    </p>
-                </div>
-            </div>
-
-            <span className="bg-lightBlue dark:bg-purple-700 w-5 h-5 rounded-full absolute flex items-center justify-center">
-                <span className="bg-white dark:bg-orange-200 w-2 h-2 block rounded-full"></span>
-            </span>
-            <div className="border-l-4 ml-2 pl-4 border-lightBlue dark:border-purple-600 pb-5">
-                <div className="mb-1">
-                    <p className="font-semibold text-sm">SMPN 1 MAOSPATI</p>
-                    <p className="text-xs">
-                        Lulus dari S1 Sistem Informasi Universitas Teknologi
-                        Yogyakarta pada tahun 2022 dengan IPK 3.26.
+                        SMAN 1 Maospati graduate, majoring in natural sciences 
                     </p>
                 </div>
             </div>
@@ -265,22 +249,4 @@ const FilterIcon = ({ icon }) => {
         default:
             break;
     }
-};
-
-const SvgDescription = ({ responsive }) => {
-    return (
-        <div className={`relative block`}>
-            <svg
-                className="absolute left-0 bottom-0  right-0 stroke-2 stroke-purple-900 "
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 1440 320"
-            >
-                <path
-                    fill="#2f1459"
-                    fill-opacity="1"
-                    d="M0,288L0,192L160,192L160,32L320,32L320,96L480,96L480,160L640,160L640,128L800,128L800,96L960,96L960,224L1120,224L1120,64L1280,64L1280,128L1440,128L1440,320L1280,320L1280,320L1120,320L1120,320L960,320L960,320L800,320L800,320L640,320L640,320L480,320L480,320L320,320L320,320L160,320L160,320L0,320L0,320Z"
-                ></path>
-            </svg>
-        </div>
-    );
 };

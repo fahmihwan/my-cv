@@ -1,42 +1,59 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React from "react";
 
 import {} from "react-router-dom";
 const TopNav = ({ handleTheme }) => {
-    // const cek = useMatch("/portfolio/:id");
-    // console.log(cek); //null
-
     const shadowCss = {
         boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
         zIndex: "9999",
     };
 
+    const activeClassName =
+        "mr-3 hidden md:block border-b-2 border-b-lightBlue";
+    const inActiveClassName =
+        "mr-3 hidden md:block border-b-2 border-b-white dark:border-b-[#281f53]";
+
     return (
         <div
             style={{ shadowCss }}
-            className="p-3 flex justify-between bg-white dark:bg-[#281f53]"
+            className="p-3 flex justify-between bg-white dark:bg-[#281f53] "
         >
             <div>
                 <p className="text-black dark:text-white">
                     Fahmi Ichwanurrohman
                 </p>
             </div>
-            <div className="text-black  dark:text-white flex items-center">
-                <Link className="mr-3 hidden md:block" to="/">
+            <div className="text-black  dark:text-white flex items-center  ">
+                <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                        isActive ? activeClassName : inActiveClassName
+                    }
+                >
                     Home
-                </Link>
-                <Link className="mr-3 hidden md:block" to="/portfolio">
+                </NavLink>
+                <NavLink
+                    to="/portfolio"
+                    className={({ isActive }) =>
+                        isActive ? activeClassName : inActiveClassName
+                    }
+                >
                     Portfolio
-                </Link>
-                <Link className="mr-3 hidden md:block" to="/about">
+                </NavLink>
+                <NavLink
+                    to="/about"
+                    className={({ isActive }) =>
+                        isActive ? activeClassName : inActiveClassName
+                    }
+                >
                     About
-                </Link>
+                </NavLink>
 
                 <label htmlFor="draft" className="peer/draft">
                     <input
                         id="draft"
                         type="checkbox"
-                        className="peer hidden"
+                        className="peer hidden "
                         onClick={handleTheme}
                     />
                     <svg

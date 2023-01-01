@@ -31,9 +31,9 @@ function App() {
     return (
         <div className=" bg-[#f6f8fd]  dark:bg-fancy min-h-screen text-black  dark:text-gray-400 ">
             <TopNav handleTheme={handleTheme} />
-            {/* {!showModal && theme !== "light" && (
+            {!showModal && theme !== "light" && (
                 <Snowfall snowflakeCount={40} />
-            )} */}
+            )}
 
             <Routes>
                 <Route path="/" element={<Home darkMode={theme} />} />

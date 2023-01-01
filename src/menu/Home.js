@@ -5,11 +5,8 @@ import { Link } from "react-router-dom";
 import ProfileImg from "../components/ProfileImg";
 import { FaLinkedin } from "react-icons/fa";
 import { SiPhp } from "react-icons/si";
+import summary from "./../data/summary.json";
 const Home = ({ darkMode }) => {
-    // tes
-
-    console.log(darkMode);
-
     return (
         <div className="">
             <div className="relative z-50  flex flex-col-reverse md:flex-row mt-10 mx-5 md:mx-20 lg:mx-40  ">
@@ -30,8 +27,7 @@ const Home = ({ darkMode }) => {
                                 data-aos-delay="300"
                                 className="mb-3 text-xl md:text-2xl text-purple-500"
                             >
-                                currently I'm looking for a new opportunity.
-                                Let's connect with me
+                                {summary.home}
                             </p>
                         </section>
 
@@ -76,14 +72,14 @@ const Home = ({ darkMode }) => {
                 </div>
             </div>
             <svg
-                className="absolute bottom-0"
+                className="absolute bottom-0 hidden md:block"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1440 320"
             >
                 <path
                     // fill="#fff"
                     fill={darkMode === "dark" ? "#181538" : "#fff"}
-                    fill-opacity="1"
+                    fillOpacity="1"
                     d="M0,32L48,37.3C96,43,192,53,288,96C384,139,480,213,576,218.7C672,224,768,160,864,149.3C960,139,1056,181,1152,165.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                 ></path>
             </svg>
