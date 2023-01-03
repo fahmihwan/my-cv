@@ -50,7 +50,6 @@ const SliderEl = ({ dataImg }) => {
         <div className=" mb-5 lg:flex ">
             <div className="w-full lg:w-3/4 my-5 md:mt-0 md:mr-5  rounded overflow-hidden bg-violet-400 dark:bg-badgeFancy">
                 <div className="py-2 md:py-4 px-3 bg-gray-600 flex ">
-                    <p>{showImg}</p>
                     <div className="bg-red-400 w-2 h-2 rounded-full mr-1"></div>
                     <div className="bg-yellow-400 w-2 h-2 rounded-full mr-1"></div>
                     <div className="bg-green-400 w-2 h-2 rounded-full mr-1"></div>

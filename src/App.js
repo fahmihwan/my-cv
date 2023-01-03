@@ -9,13 +9,11 @@ import BottomNav from "./components/BottomNav";
 import Detail from "./menu/Detail";
 import AOS from "aos";
 import Snowfall from "react-snowfall";
-import { useDispatch, useSelector } from "react-redux";
-import { themeUpdate } from "./features/themeSlice";
+import { useSelector } from "react-redux";
 
 function App() {
     const theme = useSelector((state) => state.theme.value);
     const modal = useSelector((state) => state.modal.value);
-    const dispatch = useDispatch();
 
     useEffect(() => {
         AOS.init();
@@ -29,13 +27,9 @@ function App() {
             : document.documentElement.classList.remove("dark");
     }, [theme]);
 
-    const handleTheme = () => {
-        dispatch(themeUpdate(theme === "dark" ? "light" : "dark"));
-    };
-
     return (
         <div className="bg-[#f6f8fd]  dark:bg-fancy min-h-screen text-black  dark:text-gray-400 ">
-            <TopNav handleTheme={handleTheme} />
+            <TopNav />
             {!modal && theme !== "light" && <Snowfall snowflakeCount={40} />}
             <Routes>
                 <Route path="/" element={<Home />} />

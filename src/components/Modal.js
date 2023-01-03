@@ -8,7 +8,6 @@ import { modalUpdate } from "../features/modalSlice";
 const Modal = () => {
     const modal = useSelector((state) => state.modal.value);
     const showImg = useSelector((state) => state.showImg.value);
-
     const dispatch = useDispatch();
 
     return (

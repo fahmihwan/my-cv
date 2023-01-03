@@ -1,8 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import React from "react";
 
-import {} from "react-router-dom";
-const TopNav = ({ handleTheme }) => {
+import { useDispatch, useSelector } from "react-redux";
+import { themeUpdate } from "../features/themeSlice";
+const TopNav = () => {
+    const theme = useSelector((state) => state.theme.value);
+    const dispatch = useDispatch();
+
     const shadowCss = {
         boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
         zIndex: "9999",
@@ -19,9 +23,9 @@ const TopNav = ({ handleTheme }) => {
             className="p-3 flex justify-between bg-white dark:bg-[#281f53] "
         >
             <div>
-                <p className="text-black dark:text-white">
+                <Link to="/" className="text-black dark:text-white">
                     Fahmi Ichwanurrohman
-                </p>
+                </Link>
             </div>
             <div className="text-black  dark:text-white flex items-center  ">
                 <NavLink
@@ -54,7 +58,11 @@ const TopNav = ({ handleTheme }) => {
                         id="draft"
                         type="checkbox"
                         className="peer hidden "
-                        onClick={handleTheme}
+                        onClick={() =>
+                            dispatch(
+                                themeUpdate(theme === "dark" ? "light" : "dark")
+                            )
+                        }
                     />
                     <svg
                         className="swap-on hidden peer-checked:block stroke-orange-300  fill-current w-8 h-8"
