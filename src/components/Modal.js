@@ -1,12 +1,22 @@
 import React from "react";
 // AiOutlineCompress
-const Modal = ({ showImg, showModal, setShowModal }) => {
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import { modalUpdate } from "../features/modalSlice";
+
+const Modal = () => {
+    const modal = useSelector((state) => state.modal.value);
+    const showImg = useSelector((state) => state.showImg.value);
+
+    const dispatch = useDispatch();
+
     return (
         <>
-            {showModal ? (
+            {modal ? (
                 <>
                     <div
-                        onClick={() => setShowModal(false)}
+                        onClick={() => dispatch(modalUpdate(false))}
                         className="flex  backdrop-blur-xl justify-center items-center w-full h-screen bg-black bg-opacity-30 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 cursor-zoom-out"
                     >
                         <div className=" w-11/12 h-11/12 lg:max-m-28  rounded overflow-hidden">

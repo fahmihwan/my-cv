@@ -5,8 +5,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 import porto from "./../data/porto.json";
+import { useSelector } from "react-redux";
 
-const Portfolio = ({ darkMode }) => {
+const Portfolio = () => {
     return (
         <div className="px-10 pt-5 pb-52 ">
             <div className="mb-5  px-2 lg:flex justify-between items-center dark:bg-elFancy ">
@@ -23,14 +24,7 @@ const Portfolio = ({ darkMode }) => {
             </div>
             <div className="grid grid:col-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {porto.data.map((d, i) => {
-                    return (
-                        <Card
-                            darkMode={darkMode}
-                            data={d}
-                            increment={i + 1}
-                            key={i}
-                        />
-                    );
+                    return <Card data={d} increment={i + 1} key={i} />;
                 })}
             </div>
         </div>
@@ -39,8 +33,10 @@ const Portfolio = ({ darkMode }) => {
 
 export default Portfolio;
 
-const Card = ({ darkMode, data, increment }) => {
+const Card = ({ data, increment }) => {
     const [detail, setDetail] = useState(null);
+    const theme = useSelector((state) => state.theme.value);
+
     const navigate = useNavigate();
 
     const handleDetail = (dataDetail) => {
@@ -74,10 +70,9 @@ const Card = ({ darkMode, data, increment }) => {
             data-aos-delay={size > 650 ? 50 * increment : 200}
             className="relative group md:h-72"
         >
-            {/* <div className="listPortoDark"> */}
             <div
                 className={
-                    darkMode === "dark"
+                    theme === "dark"
                         ? "listPortoDark"
                         : "listPortoLight overflow-hidden rounded-lg"
                 }

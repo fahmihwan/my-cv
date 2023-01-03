@@ -6,7 +6,11 @@ import ProfileImg from "../components/ProfileImg";
 import { FaLinkedin } from "react-icons/fa";
 import { SiPhp } from "react-icons/si";
 import summary from "./../data/summary.json";
-const Home = ({ darkMode }) => {
+import { useSelector } from "react-redux";
+
+const Home = () => {
+    const theme = useSelector((state) => state.theme.value);
+
     return (
         <div className="">
             <div className="relative z-50  flex flex-col-reverse md:flex-row mt-10 mx-5 md:mx-20 lg:mx-40  ">
@@ -18,7 +22,7 @@ const Home = ({ darkMode }) => {
                                 className="text-xl md:text-4xl mb-2 text-blue-600 dark:text-white"
                             >
                                 Hi, I'm{" "}
-                                <span className="text-purple-500">
+                                <span className="text-purple-500 ">
                                     Fahmi Ichwanurrohman
                                 </span>
                             </p>
@@ -68,7 +72,7 @@ const Home = ({ darkMode }) => {
                     </div>
                 </div>
                 <div className="w-full md:w-4/12 flex md:flex-none justify-center  ">
-                    <ProfileImg darkMode={darkMode} />
+                    <ProfileImg />
                 </div>
             </div>
             <svg
@@ -78,7 +82,7 @@ const Home = ({ darkMode }) => {
             >
                 <path
                     // fill="#fff"
-                    fill={darkMode === "dark" ? "#181538" : "#fff"}
+                    fill={theme === "dark" ? "#181538" : "#fff"}
                     fillOpacity="1"
                     d="M0,32L48,37.3C96,43,192,53,288,96C384,139,480,213,576,218.7C672,224,768,160,864,149.3C960,139,1056,181,1152,165.3C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
                 ></path>

@@ -1,11 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
+const ProfileImg = () => {
+    const theme = useSelector((state) => state.theme.value);
 
-const ProfileImg = ({ darkMode }) => {
     return (
         <>
             <div
                 className={
-                    darkMode === "dark"
+                    theme === "dark"
                         ? "profilImgDark"
                         : "profilImgLight bg-lightBlue"
                 }

@@ -1,22 +1,23 @@
 import React from "react";
 import ProfileImg from "../components/ProfileImg";
-import work_experience from "./../data/work_experience.json";
-import json_skills from "./../data/skills.json";
+import work_experience from "../data/work_experience.json";
+import json_skills from "../data/skills.json";
 
 import "aos/dist/aos.css";
 
-import summary from "./../data/summary.json";
+import summary from "../data/summary.json";
 // icon
 import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
 import { SiJavascript, SiAngular } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
-const About = ({ darkMode }) => {
+const About = () => {
     return (
         <div className="py-10">
-            <Description darkMode={darkMode} />
+            <Description />
             <div className="mx-10">
                 <div className="md:flex">
                     <div
@@ -39,7 +40,7 @@ const About = ({ darkMode }) => {
                                 <p className="text-4xl mb-3 text-black dark:text-purple-600">
                                     Skill
                                 </p>
-                                <Skills darkMode={darkMode} />
+                                <Skills />
                             </div>
                             <div
                                 data-aos="fade-down"
@@ -61,7 +62,7 @@ const About = ({ darkMode }) => {
 
 export default About;
 
-const Description = ({ darkMode }) => {
+const Description = () => {
     return (
         <div className="w-full px-10 mt-5 pb-10">
             <p className="text-4xl pb-10 md:hidden text-black dark:text-purple-600">
@@ -77,6 +78,7 @@ const Description = ({ darkMode }) => {
                         >
                             Yo, hello there!
                         </p>
+
                         <p
                             className="text-justify text-black dark:text-purple-500"
                             data-aos="fade-right"
@@ -113,11 +115,9 @@ const Description = ({ darkMode }) => {
                     </section>
                 </div>
                 <div className="w-full md:w-3/12 flex justify-center z-10">
-                    <ProfileImg darkMode={darkMode} data-aos="flip-up" />
+                    <ProfileImg data-aos="flip-up" />
                 </div>
             </div>
-            {/* <SvgDescription /> */}
-            {/* <hr className="border-purple-800" /> */}
         </div>
     );
 };
@@ -159,7 +159,9 @@ const WorkExperience = () => {
     );
 };
 
-const Skills = ({ darkMode }) => {
+const Skills = () => {
+    const theme = useSelector((state) => state.theme.value);
+
     return (
         <>
             <ul>
@@ -177,9 +179,8 @@ const Skills = ({ darkMode }) => {
                                     <p className="text-xs">{d.value} %</p>
                                 </div>
                                 <progress
-                                    // className="progressbar-skill-light"
                                     className={`${
-                                        darkMode === "dark"
+                                        theme === "dark"
                                             ? "progressbar-skill-dark"
                                             : "progressbar-skill-light"
                                     }`}

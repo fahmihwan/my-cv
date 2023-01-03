@@ -1,12 +1,19 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import React from "react";
 
 import { MdArrowBackIos } from "react-icons/md";
 import Modal from "../components/Modal";
+// redux
+import { modalUpdate } from "../features/modalSlice";
+import { showImgUpdate } from "../features/showImgSlice";
 
-const Detail = ({ showModal, setShowModal }) => {
+const Detail = () => {
     const navigate = useNavigate();
+
     let { detail, primaryImg, title } = useLocation().state;
+    const dispatch = useDispatch();
+    dispatch(showImgUpdate(primaryImg.slice(1)));
 
     let dataImg = []; // get totalImg and convert to directory folder (string)
 
@@ -27,12 +34,7 @@ const Detail = ({ showModal, setShowModal }) => {
                 </button>
             </div>
 
-            <SliderEl
-                primaryImg={primaryImg}
-                dataImg={dataImg}
-                showModal={showModal}
-                setShowModal={setShowModal}
-            />
+            <SliderEl dataImg={dataImg} />
             <NoteEl detail={detail} title={title} />
         </div>
     );
@@ -40,39 +42,38 @@ const Detail = ({ showModal, setShowModal }) => {
 
 export default Detail;
 
-const SliderEl = ({ primaryImg, dataImg, showModal, setShowModal }) => {
-    const [showImg, setShowImg] = useState(primaryImg.slice(1)); // primary Image Show
+const SliderEl = ({ dataImg }) => {
+    const showImg = useSelector((state) => state.showImg.value);
+    const dispatch = useDispatch();
 
     return (
         <div className=" mb-5 lg:flex ">
             <div className="w-full lg:w-3/4 my-5 md:mt-0 md:mr-5  rounded overflow-hidden bg-violet-400 dark:bg-badgeFancy">
                 <div className="py-2 md:py-4 px-3 bg-gray-600 flex ">
+                    <p>{showImg}</p>
                     <div className="bg-red-400 w-2 h-2 rounded-full mr-1"></div>
                     <div className="bg-yellow-400 w-2 h-2 rounded-full mr-1"></div>
                     <div className="bg-green-400 w-2 h-2 rounded-full mr-1"></div>
                 </div>
                 {/* modal */}
-                <Modal
-                    showImg={showImg}
-                    showModal={showModal}
-                    setShowModal={setShowModal}
-                />
+                <Modal />
 
                 <div
                     className="relative overflow-hidden cursor-zoom-in"
-                    onClick={() => setShowModal(true)}
+                    onClick={() => dispatch(modalUpdate(true))}
                 >
                     <img
                         className="absolute h-screen blur "
                         src="/foto-profile/bg-img.jpg"
                         alt=""
                     />
+
                     <img
                         src={showImg}
                         alt=""
                         className="relative px-1 py-5 md:px-5 z-10 object-contain md:object-contain
                         h-[240px] h-max-[430px] md:h-max-[0px] md:h-[500px]
-                        mx-auto "
+                        mx-auto"
                     />
                 </div>
             </div>
@@ -92,7 +93,7 @@ const SliderEl = ({ primaryImg, dataImg, showModal, setShowModal }) => {
                                 className={`w-28 md:w-56 h-20 md:h-28 object-contain md:mb-5 mr-2  lg:mx-auto bg-lightBlue dark:bg-badgeFancy border-orange-400 dark:border-purple-600 duration-150 ${
                                     showImg === d ? "border-4 " : "border-0"
                                 }`}
-                                onMouseEnter={(e) => setShowImg(d)}
+                                onMouseEnter={() => dispatch(showImgUpdate(d))}
                             />
                         );
                     })}

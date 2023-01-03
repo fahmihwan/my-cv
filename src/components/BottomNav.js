@@ -4,8 +4,10 @@ import { NavLink, useLocation } from "react-router-dom";
 import { IoBagCheckSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 const BottomNav = ({ showModal }) => {
+    const modal = useSelector((state) => state.modal.value);
     const activeClassName =
         "flex items-center  bg-white dark:bg-[#504585] dark:text-white  py-1 rounded border-2 border-yellow-500 dark:border-purple-600 ";
     const InActiveClassName =
@@ -14,7 +16,7 @@ const BottomNav = ({ showModal }) => {
     return (
         <div
             className={`p-2 sticky bottom-0 z-50 ${
-                !showModal ? "" : "hidden"
+                !modal ? "" : "hidden"
             } md:hidden `}
         >
             <div className="bg-lightBlue dark:bg-[#281f53] border border-lightBlue   dark:border-[#6b5dd3]  flex p-2 text-xs rounded ">
