@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { NavLink, useLocation } from "react-router-dom";
 import { IoBagCheckSharp } from "react-icons/io5";
@@ -6,7 +6,7 @@ import { FaUser } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
-const BottomNav = ({ showModal }) => {
+const BottomNav = () => {
     const modal = useSelector((state) => state.modal.value);
     const activeClassName =
         "flex items-center  bg-white dark:bg-[#504585] dark:text-white  py-1 rounded border-2 border-yellow-500 dark:border-purple-600 ";
@@ -72,6 +72,7 @@ const BottomNav = ({ showModal }) => {
         </div>
     );
 };
+export default memo(BottomNav);
 
 const FilterIcon = () => {
     const location = useLocation();
@@ -88,4 +89,3 @@ const FilterIcon = () => {
             return <IoBagCheckSharp className="mx-auto text-2xl" />;
     }
 };
-export default BottomNav;

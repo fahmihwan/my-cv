@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import React from "react";
+import React, { memo, useMemo } from "react";
 
 import { MdArrowBackIos } from "react-icons/md";
 import Modal from "../components/Modal";
@@ -14,13 +14,7 @@ const Detail = () => {
     let { detail, primaryImg, title } = useLocation().state;
     const dispatch = useDispatch();
     dispatch(showImgUpdate(primaryImg.slice(1)));
-
-    let dataImg = []; // get totalImg and convert to directory folder (string)
-
-    for (let i = 1; i <= detail.totalImg; i++) {
-        let dir = `${detail.dir + i}.png`;
-        dataImg.push(dir);
-    }
+    const dataImg = useMemo(() => getDataFromJson(detail), [detail]);
 
     return (
         <div className={`px-4 md:px-10 pt-5 pb-52`}>
@@ -40,7 +34,16 @@ const Detail = () => {
     );
 };
 
-export default Detail;
+const getDataFromJson = (detail) => {
+    let dataImg = []; // get totalImg and convert to directory folder (string)
+    for (let i = 1; i <= detail.totalImg; i++) {
+        let dir = `${detail.dir + i}.png`;
+        dataImg.push(dir);
+    }
+    return dataImg;
+};
+
+export default memo(Detail);
 
 const SliderEl = ({ dataImg }) => {
     const showImg = useSelector((state) => state.showImg.value);

@@ -1,12 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
-import React from "react";
+import React, { memo } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { themeUpdate } from "../features/themeSlice";
 const TopNav = () => {
     const theme = useSelector((state) => state.theme.value);
     const dispatch = useDispatch();
-
     const shadowCss = {
         boxShadow: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
         zIndex: "9999",
@@ -84,4 +83,6 @@ const TopNav = () => {
     );
 };
 
-export default TopNav;
+// export default TopNav;
+
+export default memo(TopNav);

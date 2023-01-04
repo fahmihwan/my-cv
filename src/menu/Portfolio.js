@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { memo, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -31,7 +31,7 @@ const Portfolio = () => {
     );
 };
 
-export default Portfolio;
+export default memo(Portfolio);
 
 const Card = ({ data, increment }) => {
     const [detail, setDetail] = useState(null);

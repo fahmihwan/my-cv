@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import ProfileImg from "../components/ProfileImg";
 import work_experience from "../data/work_experience.json";
 import json_skills from "../data/skills.json";
@@ -60,7 +60,8 @@ const About = () => {
     );
 };
 
-export default About;
+// export default About;
+export default memo(About);
 
 const Description = () => {
     return (
