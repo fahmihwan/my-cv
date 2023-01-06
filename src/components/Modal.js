@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // AiOutlineCompress
 
 // redux
@@ -8,6 +8,7 @@ import { modalUpdate } from "../features/modalSlice";
 const Modal = () => {
     const modal = useSelector((state) => state.modal.value);
     const showImg = useSelector((state) => state.showImg.value);
+    // const [dataImg, setDataImg] = useState();
     const dispatch = useDispatch();
 
     return (

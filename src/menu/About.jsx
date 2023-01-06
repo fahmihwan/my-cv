@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import summary from "../data/summary.json";
 // icon
 import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
-import { SiJavascript, SiAngular } from "react-icons/si";
+import { SiJavascript, SiAngular, SiCodeigniter } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
@@ -18,24 +18,22 @@ const About = () => {
     return (
         <div className="py-10">
             <Description />
-            <div className="mx-10">
-                <div className="md:flex">
+            <div className="mx-5 md:mx-10">
+                <div className=" lg:flex ">
                     <div
                         data-aos="fade-down"
-                        data-aos-duration="500"
-                        className="w-full md:w-5/12 md:mb-0 p-5 mb-10 rounded-lg bg-white dark:bg-elFancy  dark:text-textFancy  "
+                        className="w-full lg:w-5/12 md:mb-10 lg:mr-3 p-5 mb-10 rounded-lg bg-white dark:bg-elFancy  dark:text-textFancy  "
                     >
                         <p className="text-4xl mb-3 text-black dark:text-purple-600">
                             Experience
                         </p>
                         <WorkExperience />
                     </div>
-                    <div className="w-full md:w-7/12  ">
+                    <div className="w-full lg:w-7/12  ">
                         <div className="md:flex">
                             <div
                                 data-aos="fade-down"
-                                data-aos-duration="1000"
-                                className="w-full md:w-1/2  mb-10 md:mb-0 md:mx-5 p-5 rounded bg-white dark:bg-elFancy dark:text-textFancy   "
+                                className="w-full md:w-1/2 mb-10 md:mb-0 md:mr-3 p-5 rounded-lg bg-white dark:bg-elFancy dark:text-textFancy   "
                             >
                                 <p className="text-4xl mb-3 text-black dark:text-purple-600">
                                     Skill
@@ -44,8 +42,7 @@ const About = () => {
                             </div>
                             <div
                                 data-aos="fade-down"
-                                data-aos-duration="1500"
-                                className="w-full md:w-1/2 p-5 h-80  md:mx-5 rounded bg-white  dark:bg-elFancy dark:text-textFancy "
+                                className="w-full md:w-1/2 p-5 h-80 rounded-lg bg-white  dark:bg-elFancy dark:text-textFancy "
                             >
                                 <p className="text-4xl mb-3 text-black dark:text-purple-600">
                                     Education
@@ -148,7 +145,8 @@ const WorkExperience = () => {
                                 </p>
                             </div>
                             <ul className="list-disc pl-3 text-xs ">
-                                {d.description.map((list, i) => {
+                                <li className="list-none">{d?.description}</li>
+                                {d.subDescription.map((list, i) => {
                                     return <li key={i}>{list}</li>;
                                 })}
                             </ul>
@@ -238,6 +236,8 @@ const FilterIcon = ({ icon }) => {
     switch (icon) {
         case "Laravel":
             return <FaLaravel className="text-2xl" />;
+        case "CodeIgniter 4":
+            return <SiCodeigniter className="text-2xl" />;
         case "ReactJs":
             return <FaReact className="text-2xl" />;
         case "Javascript":

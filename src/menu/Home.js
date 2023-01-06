@@ -44,9 +44,14 @@ const Home = () => {
                                     Learn About Me
                                 </Link>
 
-                                <button className="border-dashed bg-white dark:bg-transparent hover:border-solid border border-gray-400 dark:border-white p-2 mr-2 ">
+                                <a
+                                    className="border-dashed bg-white dark:bg-transparent hover:border-solid border border-gray-400 dark:border-white p-2 mr-2 "
+                                    target={"_blank"}
+                                    rel="noreferrer noopener"
+                                    href="/cv/cv.pdf"
+                                >
                                     Resume
-                                </button>
+                                </a>
                                 <a
                                     className="text-blue-600 dark:text-purple-500 "
                                     target={"_blank"}

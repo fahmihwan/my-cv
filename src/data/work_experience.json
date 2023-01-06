@@ -5,9 +5,11 @@
             "company": "PT Sinergi Digital Solusindo",
             "category": "Freelance",
             "duration": "Jun 2022 (1 week)",
-            "description": [
-                "When I was a bachelor's student, I took a job as a freelance trainer for one week. My daily job was to train employees to use the Warehouse Management System Applications at PT. Pertamina Lubricants, based on DSP Balikpapan.",
-                "working with their company to handle inbound and outbound"
+            "description": "When I was a bachelor's student, I took a job as a freelance trainer for one week at PT. Pertamina Lubricants, based on DSP Batakan, Balikpapan. My daily job was to :",
+            "subDescription": [
+                "Train employees to use the Warehouse Management System Applications",
+                "Working with their company to handle inbound and outbound",
+                "Reporting issues in WMS applications to customer service"
             ]
         },
         {
@@ -15,9 +17,10 @@
             "company": "Alterra Academy ",
             "category": "Internship",
             "duration": "Feb 2022 - May 2022",
-            "description": [
-                "Learn basic UI/UX with Figma, React.js, and Redux",
-                "Making some mini projects",
+            "description": "I also participated in a Study independent Program at Kampus Merdeka. I asked many questions and learned about web development. My daily tasks included:",
+            "subDescription": [
+                "Learn basic UI/UX with Figma, Git, React.Js, Redux, GraphQL, and Deployment Project",
+                "Making some mini projects ",
                 "Finished the daily task"
             ]
         },
@@ -26,11 +29,13 @@
             "company": "PT.Gama Informatika",
             "category": "Internship",
             "duration": "Sep 2021 - Jan 2022 ",
-            "description": [
-                "Build the Tambak Udang frontend using the Angular framework",
-                "Slicing from the UI/UX design wireframe",
-                "Consume Rest Api From Backend",
-                "Team up with the System Analist , UI/UX designer, and Backend"
+            "description": "",
+            "subDescription": [
+                "Teaching a web programming practice course for one semester (3 SKS) ",
+                "Preparing learning materials about HTML, CSS, JS, PHP, jQuery, and MySQL ",
+                "Create a weekly task",
+                "Correcting weekly student tasks",
+                "Creating student task assessment reports"
             ]
         },
         {
@@ -38,12 +43,13 @@
             "company": "Universitas Teknologi Yogyakarta",
             "category": "Contract",
             "duration": "Aug 2021 - Jan 2022",
-            "description": [
-                "Teaching a web programming practice course for one semester (3 SKS)",
-                "preparing learning materials about HTML, CSS, JS, PHP, jQuery, and MySQL",
-                "Create a weekly task",
-                "Correcting weekly student tasks",
-                "Creating student task assessment reports"
+            "description": "",
+            "subDescription": [
+                "Slicing from the UI/UX design wireframe",
+                "Consume Api From Backend",
+                "Build the Tambak Udang frontend using the Angular framework ",
+                "Collaborate with the System Analyst, UI/UX designer, and Backend",
+                "Mentoring class with materials about Analyst System, Ui/UX, Github, CI/CD, Angular, and Lumen JWT"
             ]
         },
         {
@@ -51,7 +57,11 @@
             "company": "SEVEN INC JOGJA",
             "category": "Internship",
             "duration": "Sep 2021 - Dec 2021",
-            "description": ["Working with Ci4", "Fixing bugs at Djuragan.com"]
+            "description": "",
+            "subDescription": [
+                "Working with Ci4",
+                "Fixing bugs at Djuragan.com- Working with Ci4 - Fixing bugs at Djuragan.com"
+            ]
         }
     ]
 }

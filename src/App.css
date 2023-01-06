@@ -27,8 +27,8 @@
     border-width: 2px;
     border-style: solid;
     border-image: linear-gradient(to bottom, #a50daf, #35d2c2) 1;
-
     transition: 0.2s;
+    -webkit-transition: 0.2s;
 }
 :hover.listPortoDark {
     animation: dataPortoDark 0.6s linear infinite;
@@ -67,7 +67,7 @@
 /* DARKMODE */
 .profilImgDark {
     border-radius: 75% 25% 75% 25% / 32% 82% 18% 68%;
-    overflow: hidden;
+    overflow: hidden !important;
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
         rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
         rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
@@ -101,7 +101,7 @@
     display: flex;
     align-items: center;
     border-radius: 75% 25% 75% 25% / 32% 82% 18% 68%;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 /* PROGRESSBAR LIGHT */

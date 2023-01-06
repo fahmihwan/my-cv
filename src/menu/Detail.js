@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import React, { memo, useMemo } from "react";
+import React, { memo, useEffect, useMemo } from "react";
 
 import { MdArrowBackIos } from "react-icons/md";
 import Modal from "../components/Modal";
@@ -13,12 +13,15 @@ const Detail = () => {
 
     let { detail, primaryImg, title } = useLocation().state;
     const dispatch = useDispatch();
-    dispatch(showImgUpdate(primaryImg.slice(1)));
+    useEffect(() => {
+        dispatch(showImgUpdate(primaryImg.slice(1)));
+    }, []);
+
     const dataImg = useMemo(() => getDataFromJson(detail), [detail]);
 
     return (
-        <div className={`px-4 md:px-10 pt-5 pb-52`}>
-            <div className="mb-5 flex justify-between dark:bg-elFancy dark:text-textFancy ">
+        <div className={`px-4 md:px-10 pt-5 pb-10`}>
+            <div className="mb-5 p-2 rounded flex justify-between dark:bg-elFancy dark:text-textFancy ">
                 <p className="text-xl">Detail Portfolio</p>
                 <button
                     onClick={() => navigate("/portfolio")}
@@ -83,8 +86,8 @@ const SliderEl = ({ dataImg }) => {
             <div className="w-full lg:w-1/4 rounded bg-lightBlue md:bg-white dark:bg-elFancy">
                 <div
                     className="flex lg:flex-col border-purple-600
-                overflow-x-scroll  lg:overflow-x-visible lg:overflow-y-scroll
-                lg:h-[540px]  items-end "
+                overflow-x-scroll lg:overflow-x-visible lg:overflow-y-scroll
+                lg:h-[540px]  items-end pb-3 md:pb-0 "
                 >
                     {dataImg.map((d, i) => {
                         return (
@@ -108,7 +111,7 @@ const SliderEl = ({ dataImg }) => {
 const NoteEl = ({ detail, title }) => {
     return (
         <div className="w-full ">
-            <div className="mb-5 dark:bg-elFancy dark:text-textFancy ">
+            <div className="mb-5 dark:bg-elFancy  dark:text-textFancy ">
                 <p className=" text-2xl text-purple-400">{title}</p>
             </div>
             <div className="mb-2 md:mb-5">
