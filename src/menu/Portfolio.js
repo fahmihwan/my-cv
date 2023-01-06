@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 const Portfolio = () => {
     return (
-        <div className="px-10 pt-5 pb-52 ">
+        <div className="px-5 md:px-10 pt-5 pb-52 ">
             <div className="mb-5  px-2 lg:flex justify-between items-center dark:bg-elFancy ">
                 <div className="mb-3 lg:mb-0 dark:text-purple-500">
                     <p className="text-4xl mb-3">Portfolio</p>

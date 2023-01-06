@@ -97,6 +97,24 @@
             }
         },
         {
+            "title": "Netflix Clone",
+            "slug": "netflix-clone-react",
+            "primaryImg": "./porto-img/netflix-clone-react/1.png",
+            "detail": {
+                "dir": "/porto-img/netflix-clone-react/",
+                "totalImg": "4",
+                "description": "This Netflix web clone only shows a current informational film, this information is obtained from TMDB.",
+                "fitur": [
+                    "Sort by Upcoming, Popular, Trending, Top-rated, and Horror.",
+                    "Authenticate email",
+                    "Like Movie"
+                ],
+                "technology": ["REACT JS", "TAILWIND", "FIREBASE"],
+                "integration": ["TMDB"],
+                "link": "https://movie-react-clone-7acf9.web.app/"
+            }
+        },
+        {
             "title": "Sistem Informasi Perpustakaan",
             "slug": "si-perpustakaan",
             "primaryImg": "./porto-img/si-perpustakaan/2.png",
@@ -162,27 +180,6 @@
             }
         },
         {
-            "title": "LBS Auto Service",
-            "slug": "lbs-auto-service",
-            "primaryImg": "./porto-img/lbs-auto-service/1.png",
-            "detail": {
-                "dir": "/porto-img/lbs-auto-service/",
-                "totalImg": "5",
-                "description": "This app will record items at the repair shop.",
-                "fitur": [
-                    "Manage stock",
-                    "Manage supplier",
-                    "Manage montir",
-                    "Issuing",
-                    "Receiving",
-                    "Report"
-                ],
-                "technology": ["PHP", "BOOTSTRAP", "JQUERY", "MYSQL"],
-                "integration": [],
-                "link": "https://github.com/fahmihwan/lbs-auto-service.git"
-            }
-        },
-        {
             "title": "Simple online store",
             "slug": "simple-online-store",
             "primaryImg": "./porto-img/simple-online-store/1.png",
@@ -205,6 +202,27 @@
                 ],
                 "integration": ["Rajaongkir"],
                 "link": "https://github.com/fahmihwan/simple-online-store-ci4.git"
+            }
+        },
+        {
+            "title": "LBS Auto Service",
+            "slug": "lbs-auto-service",
+            "primaryImg": "./porto-img/lbs-auto-service/1.png",
+            "detail": {
+                "dir": "/porto-img/lbs-auto-service/",
+                "totalImg": "5",
+                "description": "This app will record items at the repair shop.",
+                "fitur": [
+                    "Manage stock",
+                    "Manage supplier",
+                    "Manage montir",
+                    "Issuing",
+                    "Receiving",
+                    "Report"
+                ],
+                "technology": ["PHP", "BOOTSTRAP", "JQUERY", "MYSQL"],
+                "integration": [],
+                "link": "https://github.com/fahmihwan/lbs-auto-service.git"
             }
         }
     ]
