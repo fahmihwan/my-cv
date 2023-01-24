@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import About from "./menu/About";
 import Home from "./menu/Home";
 import TopNav from "./components/TopNav";
@@ -14,6 +14,10 @@ import { useSelector } from "react-redux";
 function App() {
     const theme = useSelector((state) => state.theme.value);
     const modal = useSelector((state) => state.modal.value);
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     useEffect(() => {
         AOS.init();
@@ -30,7 +34,14 @@ function App() {
     return (
         <div className="bg-[#f6f8fd]  dark:bg-fancy min-h-screen text-black  dark:text-gray-400 ">
             <TopNav />
-            {!modal && theme !== "light" && <Snowfall snowflakeCount={40} />}
+            {!modal && theme !== "light" && (
+                <Snowfall
+                    style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
+                    snowflakeCount={40}
+                    color={"#9a93cb"}
+                    // radius={[0.5, 3.8]}
+                />
+            )}
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/portfolio" element={<Portfolio />} />

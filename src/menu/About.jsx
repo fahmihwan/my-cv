@@ -9,14 +9,17 @@ import summary from "../data/summary.json";
 // icon
 import { FaReact, FaLaravel, FaPhp } from "react-icons/fa";
 import { SiJavascript, SiAngular, SiCodeigniter } from "react-icons/si";
+import { SlArrowDown } from "react-icons/sl";
 import { GrMysql } from "react-icons/gr";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail, AiOutlineLine } from "react-icons/ai";
+
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const About = () => {
     return (
-        <div className="py-10">
+        <div className="">
             <Description />
             <div className="mx-5 md:mx-10">
                 <div className=" lg:flex ">
@@ -24,10 +27,12 @@ const About = () => {
                         data-aos="fade-down"
                         className="w-full lg:w-5/12 md:mb-10 lg:mr-3 p-5 mb-10 rounded-lg bg-white dark:bg-elFancy  dark:text-textFancy  "
                     >
-                        <p className="text-4xl mb-3 text-black dark:text-purple-600">
-                            Experience
-                        </p>
-                        <WorkExperience />
+                        <p className="text-4xl mb-3 text-black dark:text-purple-600">Experience</p>
+                        <div className="relative ">
+                            {work_experience.data.map((d, i) => (
+                                <WorkExperience d={d} key={i} />
+                            ))}
+                        </div>
                     </div>
                     <div className="w-full lg:w-7/12  ">
                         <div className="md:flex">
@@ -35,18 +40,14 @@ const About = () => {
                                 data-aos="fade-down"
                                 className="w-full md:w-1/2 mb-10 md:mb-0 md:mr-3 p-5 rounded-lg bg-white dark:bg-elFancy dark:text-textFancy   "
                             >
-                                <p className="text-4xl mb-3 text-black dark:text-purple-600">
-                                    Skill
-                                </p>
+                                <p className="text-4xl mb-3 text-black dark:text-purple-600">Skill</p>
                                 <Skills />
                             </div>
                             <div
                                 data-aos="fade-down"
                                 className="w-full md:w-1/2 p-5 h-80 rounded-lg bg-white  dark:bg-elFancy dark:text-textFancy "
                             >
-                                <p className="text-4xl mb-3 text-black dark:text-purple-600">
-                                    Education
-                                </p>
+                                <p className="text-4xl mb-3 text-black dark:text-purple-600">Education</p>
                                 <Education />
                             </div>
                         </div>
@@ -63,9 +64,7 @@ export default memo(About);
 const Description = () => {
     return (
         <div className="w-full px-10 mt-5 pb-10">
-            <p className="text-4xl pb-10 md:hidden text-black dark:text-purple-600">
-                Yo, hello there!
-            </p>
+            <p className="text-4xl pb-10 md:hidden text-black dark:text-purple-600">Yo, hello there!</p>
             <div className="flex flex-wrap-reverse mb-5">
                 <div className="w-full md:w-8/12 md:px-5 text-black dark:text-textFancy z-10">
                     <section className="mt-5 md:mt-0 ">
@@ -120,40 +119,42 @@ const Description = () => {
     );
 };
 
-const WorkExperience = () => {
+const WorkExperience = ({ d }) => {
+    const [toggle, setToggle] = useState(false);
+
     return (
-        <div className="relative ">
-            {work_experience.data.map((d, i) => {
-                return (
-                    <div key={`${i}div`}>
-                        <span className="bg-lightBlue dark:bg-purple-700  w-5 h-5 rounded-full absolute flex items-center justify-center">
-                            <span className="bg-white dark:bg-orange-200 w-2 h-2 block rounded-full"></span>
+        <div>
+            <span className="bg-lightBlue dark:bg-purple-700  w-5 h-5 rounded-full absolute flex items-center justify-center">
+                <span className="bg-white dark:bg-orange-200 w-2 h-2 block rounded-full"></span>
+            </span>
+            <div className="border-l-4 ml-2 pl-5 md:pl-8 border-lightBlue dark:border-purple-600 pb-5">
+                <div className="mb-1">
+                    <div className="flex justify-between">
+                        <p className="font-semibold ">
+                            {d.title} . <span className="font-light text-sm">{d.category}</span>
+                        </p>
+                        <span
+                            className=" cursor-pointer w-5 h-5 flex items-center "
+                            onClick={() => setToggle(!toggle)}
+                        >
+                            {toggle ? (
+                                <AiOutlineLine className={` mx-auto `} />
+                            ) : (
+                                <SlArrowDown className={` mx-auto `} />
+                            )}
                         </span>
-                        <div className="border-l-4 ml-2 pl-5 md:pl-8 border-lightBlue dark:border-purple-600 pb-5">
-                            <div className="mb-1">
-                                <p className="font-semibold ">
-                                    {d.title} .{" "}
-                                    <span className="font-light text-sm">
-                                        {d.category}
-                                    </span>
-                                </p>
-                                <p>
-                                    {d.company} ·{" "}
-                                    <span className="font-light text-sm md:text-base">
-                                        {d.duration}
-                                    </span>
-                                </p>
-                            </div>
-                            <ul className="list-disc pl-3 text-xs ">
-                                <li className="list-none">{d?.description}</li>
-                                {d.subDescription.map((list, i) => {
-                                    return <li key={i}>{list}</li>;
-                                })}
-                            </ul>
-                        </div>
                     </div>
-                );
-            })}
+                    <p className="text-sm">
+                        {d.company} · <span className="font-light text-sm ">{d.duration}</span>
+                    </p>
+                </div>
+                <ul className={`list-disc pl-3 text-xs ${toggle ? "block" : "hidden"}`}>
+                    <li className="list-none">{d?.description}</li>
+                    {d.subDescription.map((list, i) => {
+                        return <li key={i}>{list}</li>;
+                    })}
+                </ul>
+            </div>
         </div>
     );
 };
@@ -203,15 +204,11 @@ const Education = () => {
             </span>
             <div className="border-l-4 ml-2 pl-4 border-lightBlue dark:border-purple-600 pb-5">
                 <div className="mb-1">
-                    <p className="font-semibold text-sm">
-                        Universitas Teknologi Yogyakarta
-                    </p>
-                    <p className="text-sm font-semibold mb-2">
-                        S1 Sistem Informasi
-                    </p>
+                    <p className="font-semibold text-sm">Universitas Teknologi Yogyakarta</p>
+                    <p className="text-sm font-semibold mb-2">S1 Sistem Informasi</p>
                     <p className="text-xs ">
-                        Graduated from Yogyakarta Technology University's S1
-                        Information System in 2022 with a GPA of 3.26.
+                        Graduated from Yogyakarta Technology University's S1 Information System in 2022 with a
+                        GPA of 3.26.
                     </p>
                 </div>
             </div>
@@ -223,9 +220,7 @@ const Education = () => {
                 <div className="mb-1">
                     <p className="font-semibold text-sm">SMAN 1 MAOSPATI</p>
                     <p className="text-sm font-semibold mb-2">IPA</p>
-                    <p className="text-xs">
-                        SMAN 1 Maospati graduate, majoring in natural sciences 
-                    </p>
+                    <p className="text-xs">SMAN 1 Maospati graduate, majoring in natural sciences </p>
                 </div>
             </div>
         </>

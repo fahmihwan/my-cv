@@ -12,6 +12,7 @@ const Detail = () => {
     const navigate = useNavigate();
 
     let { detail, primaryImg, title } = useLocation().state;
+
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(showImgUpdate(primaryImg.slice(1)));
@@ -67,11 +68,7 @@ const SliderEl = ({ dataImg }) => {
                     className="relative overflow-hidden cursor-zoom-in"
                     onClick={() => dispatch(modalUpdate(true))}
                 >
-                    <img
-                        className="absolute h-screen blur "
-                        src="/foto-profile/bg-img.jpg"
-                        alt=""
-                    />
+                    <img className="absolute h-screen blur " src="/foto-profile/bg-img.jpg" alt="" />
 
                     <img
                         src={showImg}
@@ -115,19 +112,13 @@ const NoteEl = ({ detail, title }) => {
                 <p className=" text-2xl text-purple-400">{title}</p>
             </div>
             <div className="mb-2 md:mb-5">
-                <p className="text-black font-bold dark:text-white ">
-                    Description
-                </p>
-                <p className="text-xs md:text-base text-justify">
-                    {detail.description}
-                </p>
+                <p className="text-black font-bold dark:text-white ">Description</p>
+                <p className="text-xs md:text-base text-justify">{detail.description}</p>
             </div>
             <div className="md:flex">
                 {detail.fitur.length !== 0 && (
                     <div className="mb-2 w-full md:w-1/2">
-                        <p className="text-black font-bold dark:text-white">
-                            Features
-                        </p>
+                        <p className="text-black font-bold dark:text-white">Features</p>
                         <ul className="text-xs md:text-base list-disc ml-3">
                             {detail.fitur.map((d, i) => {
                                 return <li key={i}>{d}</li>;
@@ -137,9 +128,7 @@ const NoteEl = ({ detail, title }) => {
                 )}
                 <div className="w-full md:w-1/2">
                     <div className="mb-2">
-                        <p className="mb-1 text-black font-bold dark:text-white">
-                            Technology
-                        </p>
+                        <p className="mb-1 text-black font-bold dark:text-white">Technology</p>
                         <ul className="text-xs  flex flex-wrap">
                             {detail.technology.map((d, i) => {
                                 return (
@@ -155,9 +144,7 @@ const NoteEl = ({ detail, title }) => {
                     </div>
                     {detail.integration.length !== 0 && (
                         <div className="mb-2">
-                            <p className="mb-1 text-black font-bold dark:text-white">
-                                Integration
-                            </p>
+                            <p className="mb-1 text-black font-bold dark:text-white">Integration</p>
                             <ul className="text-sm  flex">
                                 {detail.integration.map((d, i) => {
                                     return (
@@ -173,9 +160,7 @@ const NoteEl = ({ detail, title }) => {
                         </div>
                     )}
                     <div className="mb-2">
-                        <p className="mb-1 text-black font-bold dark:text-white">
-                            Link
-                        </p>
+                        <p className="mb-1 text-black font-bold dark:text-white">Link</p>
                         <a
                             className="text-blue-600 underline underline-offset-2"
                             target={"_blank"}

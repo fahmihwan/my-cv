@@ -11,16 +11,11 @@ const TopNav = () => {
         zIndex: "9999",
     };
 
-    const activeClassName =
-        "mr-3 hidden md:block border-b-2 border-b-lightBlue";
-    const inActiveClassName =
-        "mr-3 hidden md:block border-b-2 border-b-white dark:border-b-[#281f53]";
+    const activeClassName = "mr-3 hidden md:block border-b-2 border-b-lightBlue";
+    const inActiveClassName = "mr-3 hidden md:block border-b-2 border-b-white dark:border-b-[#281f53]";
 
     return (
-        <div
-            style={{ shadowCss }}
-            className="p-3 flex justify-between bg-white dark:bg-[#281f53] "
-        >
+        <div style={{ shadowCss }} className="p-3  flex justify-between bg-white dark:bg-[#281f53] ">
             <div>
                 <Link to="/" className="text-black dark:text-white">
                     Fahmi Ichwanurrohman
@@ -29,25 +24,19 @@ const TopNav = () => {
             <div className="text-black  dark:text-white flex items-center  ">
                 <NavLink
                     to="/"
-                    className={({ isActive }) =>
-                        isActive ? activeClassName : inActiveClassName
-                    }
+                    className={({ isActive }) => (isActive ? activeClassName : inActiveClassName)}
                 >
                     Home
                 </NavLink>
                 <NavLink
                     to="/portfolio"
-                    className={({ isActive }) =>
-                        isActive ? activeClassName : inActiveClassName
-                    }
+                    className={({ isActive }) => (isActive ? activeClassName : inActiveClassName)}
                 >
                     Portfolio
                 </NavLink>
                 <NavLink
                     to="/about"
-                    className={({ isActive }) =>
-                        isActive ? activeClassName : inActiveClassName
-                    }
+                    className={({ isActive }) => (isActive ? activeClassName : inActiveClassName)}
                 >
                     About
                 </NavLink>
@@ -57,11 +46,7 @@ const TopNav = () => {
                         id="draft"
                         type="checkbox"
                         className="peer hidden "
-                        onClick={() =>
-                            dispatch(
-                                themeUpdate(theme === "dark" ? "light" : "dark")
-                            )
-                        }
+                        onClick={() => dispatch(themeUpdate(theme === "dark" ? "light" : "dark"))}
                     />
                     <svg
                         className="swap-on hidden peer-checked:block stroke-orange-300  fill-current w-8 h-8"
