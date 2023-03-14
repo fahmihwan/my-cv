@@ -21,15 +21,12 @@ const Home = () => {
                                 data-aos="fade-right"
                                 className="text-xl md:text-4xl mb-2 text-blue-600 dark:text-white"
                             >
-                                Hi, I'm{" "}
-                                <span className="text-purple-500 ">
-                                    Fahmi Ichwanurrohman
-                                </span>
+                                Hi, I'm <span className="text-purple-500 ">Fahmi Ichwanurrohman</span>
                             </p>
                             <p
                                 data-aos="fade-right"
                                 data-aos-delay="300"
-                                className="mb-3 text-xl md:text-2xl text-purple-500"
+                                className="mb-3 text-xl md:text-2xl "
                             >
                                 {summary.home}
                             </p>
@@ -64,9 +61,7 @@ const Home = () => {
                         </section>
 
                         <section className="mb-10 md:mb-0">
-                            <div className="mb-3">
-                                Current Favorite Tech Stack
-                            </div>
+                            <div className="mb-3">Current Favorite Tech Stack</div>
                             <div className="flex ">
                                 <FaLaravel className="text-red-600 dark:text-purple-600 text-6xl mr-3 " />
                                 <FaReact className="text-sky-600 dark:text-purple-600 text-6xl mr-3 " />

@@ -1,4 +1,4 @@
-import React, { memo, useLayoutEffect, useState } from "react";
+import React, { memo, useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
@@ -11,9 +11,11 @@ const Portfolio = () => {
     return (
         <div className="px-5 md:px-10 pt-5 pb-10 ">
             <div className="mb-5  px-2 flex justify-between items-center  ">
-                <div className="mb-3 lg:mb-0 py-2 dark:text-purple-500 dark:rounded">
-                    <p className="text-4xl ">Portfolio</p>
-                    <p className=" text-sm ">This is my previous works, personal (experiments) .</p>
+                <div className="mb-3 lg:mb-0 py-2  dark:rounded">
+                    <p className="text-4xl dark:text-purple-500">Portfolio</p>
+                    <p className="text-sm md:text-base">
+                        This is my previous works, personal (experiments) .
+                    </p>
                 </div>
                 <span className=" dark:text-white text-black rounded font-bold">
                     {porto.data.length} items
@@ -36,10 +38,6 @@ const Card = ({ data, increment }) => {
 
     const navigate = useNavigate();
 
-    const handleDetail = (dataDetail) => {
-        setDetail(dataDetail);
-    };
-
     const [size, setSize] = useState(0);
 
     useLayoutEffect(() => {
@@ -52,13 +50,16 @@ const Card = ({ data, increment }) => {
         return () => window.removeEventListener("resize", updateSize);
     }, [size]);
 
-    if (detail !== null) {
-        navigate(`/portfolio/${data.slug}`, {
-            replace: true,
-            state: detail,
-            title: data.title,
-        });
-    }
+    useEffect(() => {
+        if (detail !== null) {
+            navigate(`/portfolio/${data.slug}`, {
+                replace: true,
+                state: detail,
+                title: data.title,
+            });
+        }
+        return () => setDetail(null);
+    }, [detail, data, navigate]);
 
     return (
         <div
@@ -81,7 +82,7 @@ const Card = ({ data, increment }) => {
                     </span>
 
                     <button
-                        onClick={() => handleDetail(data, data.title)}
+                        onClick={() => setDetail(data)}
                         className="p-2  animate-none group-hover:animate-bounce dark:bg-purple-900 dark:text-white  text-xs"
                     >
                         See Detail

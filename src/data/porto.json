@@ -43,15 +43,23 @@
                     "Shopping Cart customer and cahsir",
                     "Report"
                 ],
-                "technology": [
-                    "PHP",
-                    "LARAVEL",
-                    "Vanilla Javascript",
-                    "BOOTSTRAP",
-                    "MYSQL"
-                ],
+                "technology": ["PHP", "LARAVEL", "Vanilla Javascript", "BOOTSTRAP", "MYSQL"],
                 "integration": ["QRcode", "Midtrans", "Gmail"],
                 "link": "https://github.com/fahmihwan/My-order-seacoff.git"
+            }
+        },
+        {
+            "title": "Inventori Laboratorium",
+            "slug": "inventori-laboratorium",
+            "primaryImg": "./porto-img/inventori-laboratorium/5.png",
+            "detail": {
+                "dir": "/porto-img/inventori-laboratorium/",
+                "totalImg": "5",
+                "description": "This application will record asset data at Laboratorium SMK TAMTAMA KARANGANYAR KEBUMEN",
+                "fitur": ["Receiving", "Issuing", "Mutation", "Chart", "Report, Print"],
+                "technology": ["REACT JS", "LARAVEL", "INERTIA", "BOOTSTRAP", "MYSQL"],
+                "integration": [],
+                "link": "https://github.com/fahmihwan/inventory-laboratorium.git"
             }
         },
         {
@@ -62,22 +70,8 @@
                 "dir": "/porto-img/sim-aset/",
                 "totalImg": "6",
                 "description": "This application will record asset data at MTS",
-                "fitur": [
-                    "Receiving",
-                    "Issuing",
-                    "Mutation",
-                    "Chart",
-                    "Report"
-                ],
-                "technology": [
-                    "REACT JS",
-                    "LARAVEL",
-                    "PHP",
-                    "INERTIA",
-                    "BREEZE",
-                    "TAILWIND",
-                    "MYSQL"
-                ],
+                "fitur": ["Receiving", "Issuing", "Mutation", "Chart", "Report"],
+                "technology": ["REACT JS", "LARAVEL", "PHP", "INERTIA", "BREEZE", "TAILWIND", "MYSQL"],
                 "integration": [],
                 "link": "https://github.com/fahmihwan/sim-aset-react-laravel.git"
             }
@@ -131,13 +125,7 @@
                     "Manange members",
                     "Report"
                 ],
-                "technology": [
-                    "PHP",
-                    "LARAVEL",
-                    "BOOTSTRAP",
-                    "JQUERY",
-                    "MYSQL"
-                ],
+                "technology": ["PHP", "LARAVEL", "BOOTSTRAP", "JQUERY", "MYSQL"],
                 "integration": [],
                 "link": "https://github.com/fahmihwan/sistem-informasi-perpustakaan.git"
             }
@@ -150,10 +138,7 @@
                 "dir": "/porto-img/company-profile-bumibalakosa/",
                 "totalImg": "3",
                 "description": "Its landing page company profile at PT.bumi balakosa This is the company profile for PT.Bumi Balakosa. ",
-                "fitur": [
-                    "Send message via email",
-                    "Change language to bahasa"
-                ],
+                "fitur": ["Send message via email", "Change language to bahasa"],
                 "technology": ["REACT JS", "BOOTSTRAP"],
                 "integration": ["Email Js"],
                 "link": "https://www.bumibalakosa.com"
@@ -168,13 +153,7 @@
                 "totalImg": "5",
                 "description": "This website describes the inventory apps for Thrift Marketplace.",
                 "fitur": ["Receiving", "Issuing", "Manange item ", "Report"],
-                "technology": [
-                    "PHP",
-                    "LARAVEL",
-                    "BOOTSTRAP",
-                    "JQUERY",
-                    "MYSQL"
-                ],
+                "technology": ["PHP", "LARAVEL", "BOOTSTRAP", "JQUERY", "MYSQL"],
                 "integration": [],
                 "link": "https://github.com/fahmihwan/inventory-buka-tutup-second-thrift.git"
             }
@@ -187,19 +166,8 @@
                 "dir": "/porto-img/simple-online-store/",
                 "totalImg": "3",
                 "description": "this is an simple online shop apps",
-                "fitur": [
-                    "Manage Item",
-                    "Manage Transaction",
-                    "Invoice",
-                    "Comment"
-                ],
-                "technology": [
-                    "PHP",
-                    "CodeIgniter 4",
-                    "BOOTSTRAP",
-                    "JQUERY",
-                    "MYSQL"
-                ],
+                "fitur": ["Manage Item", "Manage Transaction", "Invoice", "Comment"],
+                "technology": ["PHP", "CodeIgniter 4", "BOOTSTRAP", "JQUERY", "MYSQL"],
                 "integration": ["Rajaongkir"],
                 "link": "https://github.com/fahmihwan/simple-online-store-ci4.git"
             }

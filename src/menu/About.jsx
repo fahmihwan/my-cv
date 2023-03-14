@@ -76,11 +76,7 @@ const Description = () => {
                             Yo, hello there!
                         </p>
 
-                        <p
-                            className="text-justify text-black dark:text-purple-500"
-                            data-aos="fade-right"
-                            data-aos-delay="300"
-                        >
+                        <p className="text-justify " data-aos="fade-right" data-aos-delay="300">
                             {summary.abut}
                         </p>
                     </section>

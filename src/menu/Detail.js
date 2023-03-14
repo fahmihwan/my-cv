@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import React, { memo, useEffect, useMemo } from "react";
+// import React, { memo, useMemo } from "react";
 
 import { MdArrowBackIos } from "react-icons/md";
 import Modal from "../components/Modal";
@@ -14,9 +15,10 @@ const Detail = () => {
     let { detail, primaryImg, title } = useLocation().state;
 
     const dispatch = useDispatch();
+
     useEffect(() => {
         dispatch(showImgUpdate(primaryImg.slice(1)));
-    }, []);
+    }, [primaryImg, dispatch]);
 
     const dataImg = useMemo(() => getDataFromJson(detail), [detail]);
 
