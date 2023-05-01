@@ -14,7 +14,7 @@ const Portfolio = () => {
                 <div className="mb-3 lg:mb-0 py-2  dark:rounded">
                     <p className="text-4xl dark:text-purple-500">Portfolio</p>
                     <p className="text-sm md:text-base">
-                        This is my previous works, personal (experiments) .
+                        This is my previous works, personal (experiments). and freelance project list
                     </p>
                 </div>
                 <span className=" dark:text-white text-black rounded font-bold">

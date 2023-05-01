@@ -161,17 +161,19 @@ const NoteEl = ({ detail, title }) => {
                             </ul>
                         </div>
                     )}
-                    <div className="mb-2">
-                        <p className="mb-1 text-black font-bold dark:text-white">Link</p>
-                        <a
-                            className="text-blue-600 underline underline-offset-2"
-                            target={"_blank"}
-                            rel="noreferrer noopener"
-                            href={detail.link}
-                        >
-                            {detail.link}
-                        </a>
-                    </div>
+                    {detail.link.length !== 0 && (
+                        <div className="mb-2">
+                            <p className="mb-1 text-black font-bold dark:text-white">Link</p>
+                            <a
+                                className="text-blue-600 underline underline-offset-2"
+                                target={"_blank"}
+                                rel="noreferrer noopener"
+                                href={detail.link}
+                            >
+                                {detail.link}
+                            </a>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

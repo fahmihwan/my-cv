@@ -49,6 +49,47 @@
             }
         },
         {
+            "title": "Penghitungan suara DPRD Jambi",
+            "slug": "penghitungan-suara-dprd-jambi",
+            "primaryImg": "./porto-img/sim-penghitungan-suara-dprd-jambi/5.png",
+            "detail": {
+                "dir": "/porto-img/sim-penghitungan-suara-dprd-jambi/",
+                "totalImg": "7",
+                "description": "the project from one of candidate DPRD Jambi (Mr. Sutejo), just to collect votes from her from the whole city in Jambi Province. This application is used by 100++ users (saksi) . the purpose to seeing quicly visually data.",
+                "fitur": [
+                    "access : admin & users",
+                    "manange users (saksi)",
+                    "input votes from users",
+                    "charts",
+                    "export to excel"
+                ],
+                "technology": ["REACT JS", "LARAVEL", "INERTIA", "MATERIAL UI", "MYSQL"],
+                "integration": ["API Data Wilayah Indonesia. "],
+                "link": ""
+            }
+        },
+        {
+            "title": "E-Raport",
+            "slug": "e-raport-sd-dahromo",
+            "primaryImg": "./porto-img/e-raport-sd-dahromo/5.png",
+            "detail": {
+                "dir": "/porto-img/e-raport-sd-dahromo/",
+                "totalImg": "6",
+                "description": "E-Raport is an academic information system used to input web-based student value data.",
+                "fitur": [
+                    "access : admin, guru (wali kelas / guru) ",
+                    "manage teacher & student information",
+                    "input scores & personality value of student",
+                    "manage student transfers (graduated / out)",
+                    "Find student reports from the whole class ",
+                    "export pdf"
+                ],
+                "technology": ["REACT JS", "LARAVEL", "INERTIA", "BOOTSTRAP", "MYSQL"],
+                "integration": [],
+                "link": "https://github.com/fahmihwan/E-raport-SD1darma"
+            }
+        },
+        {
             "title": "Inventori Laboratorium",
             "slug": "inventori-laboratorium",
             "primaryImg": "./porto-img/inventori-laboratorium/5.png",
